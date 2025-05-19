@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - Support Client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_site_web.css">
+</head>
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul
+                        class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="active block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html" 
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full bg-zanma-blue text-white py-24 premier_section_after_navbar">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">Support Client ZANMA DRIVER</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto fade-in">Notre équipe est disponible 24h/24 pour répondre à toutes vos questions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Options Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comment pouvons-nous vous aider ?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choisissez votre méthode de contact préférée</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Option 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Appel téléphonique</h3>
+                    <p class="text-gray-600 text-center mb-6">Parlez directement avec un conseiller</p>
+                    <a href="tel:+33123456789" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300">01 23 45 67 89</a>
+                </div>
+                
+                <!-- Option 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-comments text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Chat en direct</h3>
+                    <p class="text-gray-600 text-center mb-6">Discutez en temps réel avec notre équipe</p>
+                    <a href="#" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300">Ouvrir le chat</a>
+                </div>
+                
+                <!-- Option 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.4s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Email</h3>
+                    <p class="text-gray-600 text-center mb-6">Réponse garantie sous 2 heures</p>
+                    <a href="mailto:support@zanmadriver.com" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300">support@zanmadriver.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trouvez rapidement des réponses à vos questions</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment annuler une course ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Pour annuler une course, ouvrez l'application, allez dans la section "Mes courses", sélectionnez la course concernée et cliquez sur "Annuler". Les annulations sans frais sont possibles jusqu'à 2 minutes après la confirmation du chauffeur.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Que faire si j'ai oublié un objet dans un véhicule ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Contactez immédiatement notre service client via l'application ou par téléphone. Nous contacterons le chauffeur pour essayer de récupérer votre objet. Si l'objet est retrouvé, nous organiserons sa restitution dans les plus brefs délais.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.2s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment modifier mon adresse de destination ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Après avoir commandé une course, vous pouvez modifier votre destination directement dans l'application avant que le chauffeur ne commence le trajet. Une fois le trajet commencé, vous devrez demander directement au chauffeur de modifier la destination.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.3s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment signaler un problème avec un chauffeur ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Vous pouvez noter et commenter votre trajet dans l'application après chaque course. Pour des problèmes plus sérieux, contactez notre service client via le chat, par email ou par téléphone. Nous traitons chaque signalement avec la plus grande attention.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.4s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment fonctionne le paiement via l'application ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Les paiements sont sécurisés et effectués directement via l'application. Vous pouvez enregistrer plusieurs moyens de paiement (carte bancaire, PayPal, etc.). Le montant est débité à la fin de la course. Vous recevez toujours un reçu par email.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Voir toutes les questions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Center Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Centre d'aide en ligne</h2>
+                    <p class="text-gray-600 mb-6 text-lg">Consultez notre base de connaissances complète avec des guides détaillés et des tutoriels pour résoudre les problèmes courants.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Trouvez des réponses à vos questions sur les comptes, les paiements, les courses, la sécurité et bien plus encore.</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#" class="bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Guides d'utilisation</a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-medium transition duration-300">Tutoriels vidéo</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Centre d'aide ZANMA DRIVER" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="w-full py-16 md:py-24 bg-zanma-blue text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Contactez-nous</h2>
+                    <p class="text-xl max-w-2xl mx-auto">Remplissez ce formulaire et notre équipe vous répondra dans les plus brefs délais</p>
+                </div>
+                
+                <form class="space-y-6 fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium mb-1">Prénom</label>
+                            <input type="text" id="first-name" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium mb-1">Nom</label>
+                            <input type="text" id="last-name" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow">
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-1">Téléphone (optionnel)</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium mb-1">Sujet</label>
+                        <select id="subject" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow text-white">
+                            <option value="" disabled selected>Sélectionnez un sujet</option>
+                            <option value="problem">Problème avec une course</option>
+                            <option value="payment">Question sur un paiement</option>
+                            <option value="account">Problème de compte</option>
+                            <option value="safety">Question de sécurité</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:outline-none focus:ring-2 focus:ring-zanma-yellow"></textarea>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-6 py-4 rounded-lg text-lg font-medium transition duration-300">Envoyer le message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Merci pour votre message! Notre équipe vous contactera bientôt.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

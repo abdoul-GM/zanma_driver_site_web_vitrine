@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - Restaurant Partenaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_site_web.css">
+</head>
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul
+                        class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="active block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html" 
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full bg-zanma-blue text-white py-24 premier_section_after_navbar">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">Devenez restaurant partenaire</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto fade-in">Augmentez votre chiffre d'affaires en proposant vos plats à des milliers de clients via ZANMA DRIVER</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pourquoi devenir partenaire ?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Découvrez comment ZANMA DRIVER peut booster votre activité</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">+30% de revenus</h3>
+                    <p class="text-gray-600 text-center">En moyenne, nos restaurants partenaires augmentent leur chiffre d'affaires de 30% grâce à la livraison.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Nouveaux clients</h3>
+                    <p class="text-gray-600 text-center">Touchez des milliers de nouveaux clients qui ne connaissaient pas votre établissement.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.4s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Livraison rapide</h3>
+                    <p class="text-gray-600 text-center">Nos chauffeurs livrent en moins de 30 minutes pour préserver la qualité de vos plats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comment ça marche ?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Un processus simple pour intégrer notre réseau de restaurants partenaires</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 slide-in-left">
+                    <div class="space-y-8">
+                        <!-- Step 1 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span class="text-xl font-bold">1</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Inscription en ligne</h3>
+                                <p class="text-gray-600">Remplissez notre formulaire en 5 minutes seulement.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span class="text-xl font-bold">2</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Validation de votre dossier</h3>
+                                <p class="text-gray-600">Notre équipe étudie votre demande sous 48h.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span class="text-xl font-bold">3</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Configuration de votre menu</h3>
+                                <p class="text-gray-600">Nous vous aidons à intégrer votre carte sur notre plateforme.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center">
+                                    <span class="text-xl font-bold">4</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Lancement</h3>
+                                <p class="text-gray-600">Vos plats sont disponibles pour livraison !</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <a href="inscription.html" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Devenir partenaire</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 slide-in-right">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Restaurant partenaire ZANMA DRIVER" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Testimonials -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos restaurants partenaires témoignent</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Découvrez ce que disent nos partenaires actuels</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=712&q=80" alt="Le Bistrot ouagaien" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Le Bistrot ouagaien</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Depuis notre partenariat avec ZANMA DRIVER, notre chiffre d'affaires a augmenté de 35%. Les livraisons sont rapides et les clients satisfaits."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=740&q=80" alt="Pizza Napoli" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Pizza Napoli</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"La plateforme est très simple à utiliser. Nous avons gagné de nombreux clients fidèles grâce à la livraison ZANMA DRIVER."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in" style="transition-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sushi Palace" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sushi Palace</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Les livreurs sont professionnels et les plats arrivent toujours en parfait état. Un vrai plus pour notre restaurant !"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="w-full py-16 md:py-24 bg-zanma-blue text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nos offres pour restaurants</h2>
+                <p class="text-xl max-w-3xl mx-auto">Des tarifs compétitifs adaptés à votre établissement</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl fade-in">
+                    <h3 class="text-2xl font-bold mb-4">Découverte</h3>
+                    <div class="text-4xl font-bold mb-6">15% <span class="text-lg">/commande</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Commission à 15%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Listage sur l'application</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Support standard</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-gray-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">Mise en avant</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg text-center font-medium transition duration-300">Choisir cette offre</a>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div class="bg-white bg-opacity-20 p-8 rounded-xl transform md:-translate-y-4 fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-zanma-yellow text-gray-900 inline-block px-4 py-1 rounded-full text-sm font-bold mb-4">Populaire</div>
+                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                    <div class="text-4xl font-bold mb-6">12% <span class="text-lg">/commande</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Commission à 12%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Listage prioritaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Support premium</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Mise en avant 1x/semaine</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg text-center font-medium transition duration-300">Choisir cette offre</a>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl fade-in" style="transition-delay: 0.4s;">
+                    <h3 class="text-2xl font-bold mb-4">Exclusif</h3>
+                    <div class="text-4xl font-bold mb-6">9% <span class="text-lg">/commande</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Commission à 9%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Listage en tête de liste</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Support dédié 24/7</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Mise en avant quotidienne</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg text-center font-medium transition duration-300">Choisir cette offre</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trouvez les réponses aux questions les plus posées</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl fade-in">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Quels sont les frais pour les restaurants ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Nos frais varient entre 9% et 15% du montant de la commande, selon l'offre choisie. Ces frais incluent la mise à disposition de la plateforme, le service de livraison et le support client. Aucun frais fixe n'est appliqué.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl fade-in" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment sont gérés les paiements ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Les paiements sont effectués chaque semaine directement sur votre compte bancaire. Vous recevez le montant des commandes moins notre commission. Tous les paiements clients sont gérés par notre plateforme sécurisée.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-gray-50 p-6 rounded-xl fade-in" style="transition-delay: 0.2s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Puis-je modifier mon menu ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Oui, vous pouvez modifier votre menu à tout moment depuis votre espace restaurant. Les changements sont appliqués immédiatement sur l'application. Notre équipe peut vous aider à optimiser votre carte pour la livraison.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-gray-50 p-6 rounded-xl fade-in" style="transition-delay: 0.3s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment sont choisis les livreurs ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Tous nos livreurs sont des professionnels formés et vérifiés. Le système attribue automatiquement le livreur le plus proche de votre établissement pour garantir une livraison rapide. Vous pouvez noter chaque livreur après la livraison.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Voir toutes les questions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-zanma-blue to-blue-800 text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Prêt à augmenter vos ventes ?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">Rejoignez notre réseau de restaurants partenaires dès aujourd'hui</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="#" class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Devenir partenaire</a>
+                <a href="#" class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

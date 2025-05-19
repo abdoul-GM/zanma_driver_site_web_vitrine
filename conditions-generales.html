@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA Driver - Conditions Générales d'Utilisation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, #11286b 0%, #11286b 100%);
+        }
+
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: #ffe435;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .sticky-sidebar {
+            position: sticky;
+            top: 2rem;
+            align-self: start;
+        }
+
+        .section-card {
+            transition: all 0.2s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+
+        @media (max-width: 1023px) {
+            .sticky-sidebar {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                    overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call
+                    Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="gradient-header text-white py-16 px-4 premier_section_after_navbar">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Conditions Générales d'Utilisation</h1>
+                <p class="text-xl text-blue-100 max-w-3xl">Veuillez lire attentivement les présentes conditions
+                    avant d'utiliser nos services.</p>
+                <div class="mt-6 bg-blue-800 text-blue-100 px-4 py-2 rounded-full text-sm">
+                    Dernière mise à jour : 15 juin 2023
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto max-w-6xl px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Table of Contents (Sidebar) -->
+            <div class="lg:w-1/4 sticky-sidebar">
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <h3 class="font-bold text-blue-900 mb-4 text-lg">Sommaire</h3>
+                    <nav>
+                        <ul class="space-y-2">
+                            <li><a href="#introduction" class="text-blue-700 hover:text-blue-900 hover:underline">1.
+                                    Introduction</a></li>
+                            <li><a href="#definitions" class="text-blue-700 hover:text-blue-900 hover:underline">2.
+                                    Définitions</a></li>
+                            <li><a href="#access" class="text-blue-700 hover:text-blue-900 hover:underline">3. Accès
+                                    au service</a></li>
+                            <li><a href="#accounts" class="text-blue-700 hover:text-blue-900 hover:underline">4.
+                                    Comptes utilisateurs</a></li>
+                            <li><a href="#responsibilities" class="text-blue-700 hover:text-blue-900 hover:underline">5.
+                                    Obligations et
+                                    responsabilités</a></li>
+                            <li><a href="#privacy" class="text-blue-700 hover:text-blue-900 hover:underline">6.
+                                    Confidentialité & données</a></li>
+                            <li><a href="#termination" class="text-blue-700 hover:text-blue-900 hover:underline">7.
+                                    Suspension et résiliation</a></li>
+                            <li><a href="#modifications" class="text-blue-700 hover:text-blue-900 hover:underline">8.
+                                    Modifications des
+                                    conditions</a></li>
+                            <li><a href="#jurisdiction" class="text-blue-700 hover:text-blue-900 hover:underline">9.
+                                    Droit applicable et juridiction</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mt-6 pt-4 border-t border-gray-100">
+                        <a href="#" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium">
+                            <i class="fas fa-file-pdf mr-2"></i> Télécharger en PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terms Content -->
+            <div class="lg:w-3/4">
+                <div class="bg-white rounded-xl shadow-sm p-8 md:p-10 border border-gray-100">
+                    <!-- Introduction -->
+                    <section id="introduction" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                1</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Introduction</h2>
+                                <div class="prose text-gray-700">
+                                    <p>Les présentes Conditions Générales d'Utilisation (ci-après les "<span
+                                            class="highlight">CGU</span>") régissent l'utilisation des services
+                                        proposés par <span class="font-medium text-blue-900">ZANMA Driver</span>
+                                        (ci-après "<span class="highlight">ZANMA</span>").</p>
+                                    <p class="mt-4">En accédant ou en utilisant nos services, vous acceptez d'être
+                                        lié par ces CGU. Si vous n'acceptez pas toutes ces conditions, vous ne devez
+                                        pas utiliser nos services.</p>
+                                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                                        <p class="text-yellow-700 font-medium"><i
+                                                class="fas fa-exclamation-circle mr-2"></i> L'utilisation de notre
+                                            service est réservée aux personnes âgées d'au moins 18 ans.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Définitions -->
+                    <section id="definitions" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                2</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Définitions</h2>
+                                <div class="prose text-gray-700">
+                                    <p>Dans les présentes CGU, les termes ci-dessous ont les significations
+                                        suivantes :</p>
+                                    <ul class="mt-4 space-y-3">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span><span class="font-medium text-blue-900">Application</span> :
+                                                L'application mobile ZANMA Driver et ses fonctionnalités.</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span><span class="font-medium text-blue-900">Utilisateur</span> : Toute
+                                                personne utilisant l'Application.</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span><span class="font-medium text-blue-900">Chauffeur</span> :
+                                                Utilisateur professionnel fournissant des services de
+                                                transport.</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span><span class="font-medium text-blue-900">Client</span> :
+                                                Utilisateur sollicitant un service de transport.</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span><span class="font-medium text-blue-900">Service</span> : La mise
+                                                en relation entre Chauffeurs et Clients via l'Application.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Accès au service -->
+                    <section id="access" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                3</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Accès au service</h2>
+                                <div class="prose text-gray-700">
+                                    <p>L'accès au Service nécessite :</p>
+                                    <ol class="list-decimal pl-5 mt-2 space-y-2">
+                                        <li>Un smartphone compatible avec l'Application</li>
+                                        <li>Une connexion internet fonctionnelle</li>
+                                        <li>L'acceptation des présentes CGU</li>
+                                        <li>Pour les Chauffeurs : la validation du dossier d'inscription par ZANMA
+                                        </li>
+                                    </ol>
+                                    <p class="mt-4">ZANMA se réserve le droit de refuser l'accès au Service, sans
+                                        avoir à motiver sa décision, notamment en cas de non-respect des CGU.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Comptes utilisateurs -->
+                    <section id="accounts" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                4</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Comptes utilisateurs</h2>
+                                <div class="prose text-gray-700">
+                                    <h3 class="font-semibold text-blue-900 mt-6">4.1 Création de compte</h3>
+                                    <p>Pour utiliser pleinement le Service, vous devez créer un compte en
+                                        fournissant des informations exactes et complètes.</p>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">4.2 Compte Client</h3>
+                                    <p>Le compte Client permet de :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Commander des courses</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Payer électroniquement</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Noter les Chauffeurs</span>
+                                        </li>
+                                    </ul>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">4.3 Compte Chauffeur</h3>
+                                    <p>Le compte Chauffeur nécessite :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Un permis de conduire valide</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Un casier judiciaire vierge</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Une assurance professionnelle</span>
+                                        </li>
+                                    </ul>
+                                    <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                                        <p class="text-blue-800"><i class="fas fa-info-circle mr-2"></i> Les
+                                            Chauffeurs sont des professionnels indépendants, ZANMA n'est pas
+                                            employeur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Obligations et responsabilités -->
+                    <section id="responsibilities" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                5</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Obligations et responsabilités
+                                </h2>
+                                <div class="prose text-gray-700">
+                                    <h3 class="font-semibold text-blue-900 mt-6">5.1 Responsabilités de ZANMA</h3>
+                                    <p>ZANMA s'engage à :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Fournir une plateforme technologique fonctionnelle</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Assurer la sécurité des transactions</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Traiter les réclamations dans des délais raisonnables</span>
+                                        </li>
+                                    </ul>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">5.2 Responsabilités des
+                                        Utilisateurs</h3>
+                                    <p>Les Utilisateurs s'engagent à :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Respecter les règles de conduite et de sécurité</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Ne pas utiliser le Service à des fins illégales</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Maintenir leurs informations à jour</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-6">
+                                        <p class="text-yellow-700 font-medium"><i
+                                                class="fas fa-exclamation-triangle mr-2"></i> ZANMA décline toute
+                                            responsabilité en cas de dommages causés par un Utilisateur ne
+                                            respectant pas ses obligations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Confidentialité & données personnelles -->
+                    <section id="privacy" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                6</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Confidentialité & données
+                                    personnelles</h2>
+                                <div class="prose text-gray-700">
+                                    <p>ZANMA collecte et traite des données personnelles conformément au RGPD et à
+                                        notre <a href="#" class="text-blue-600 hover:underline">Politique de
+                                            Confidentialité</a>.</p>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">6.1 Données collectées</h3>
+                                    <p>Nous pouvons collecter :</p>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <h4 class="font-medium text-blue-900">Identité</h4>
+                                            <p class="text-sm mt-1">Nom, prénom, date de naissance, photo</p>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <h4 class="font-medium text-blue-900">Contact</h4>
+                                            <p class="text-sm mt-1">Email, téléphone, adresse</p>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <h4 class="font-medium text-blue-900">Paiement</h4>
+                                            <p class="text-sm mt-1">Moyens de paiement (cryptées)</p>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <h4 class="font-medium text-blue-900">Localisation</h4>
+                                            <p class="text-sm mt-1">Position pendant les courses</p>
+                                        </div>
+                                    </div>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">6.2 Utilisation des données</h3>
+                                    <p>Les données sont utilisées pour :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Fournir et améliorer le Service</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Assurer la sécurité des Utilisateurs</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Personnaliser l'expérience utilisateur</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Suspension et résiliation -->
+                    <section id="termination" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                7</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Suspension et résiliation</h2>
+                                <div class="prose text-gray-700">
+                                    <h3 class="font-semibold text-blue-900 mt-6">7.1 Par l'Utilisateur</h3>
+                                    <p>Vous pouvez résilier votre compte à tout moment via les paramètres de
+                                        l'Application.</p>
+
+                                    <h3 class="font-semibold text-blue-900 mt-6">7.2 Par ZANMA</h3>
+                                    <p>ZANMA peut suspendre ou résilier votre accès au Service sans préavis en cas
+                                        de :</p>
+                                    <ul class="mt-2 space-y-1">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Violation des CGU</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Comportement frauduleux</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Note moyenne inférieure à 3/5</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Modifications des conditions -->
+                    <section id="modifications" class="section-card mb-12 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                8</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Modifications des conditions</h2>
+                                <div class="prose text-gray-700">
+                                    <p>ZANMA se réserve le droit de modifier ces CGU à tout moment. Les
+                                        modifications prendront effet :</p>
+                                    <ul class="mt-2 space-y-2">
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>Immédiatement pour les nouveaux utilisateurs</span>
+                                        </li>
+                                        <li class="flex">
+                                            <span class="text-yellow-500 mr-2">•</span>
+                                            <span>30 jours après notification pour les utilisateurs existants</span>
+                                        </li>
+                                    </ul>
+                                    <p class="mt-4">L'utilisation continue du Service après modification vaut
+                                        acceptation des nouvelles CGU.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Droit applicable et juridiction -->
+                    <section id="jurisdiction" class="section-card mb-6 scroll-mt-20">
+                        <div class="flex items-start">
+                            <div
+                                class="flex-shrink-0 bg-blue-100 text-blue-900 rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">
+                                9</div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-blue-900 mb-4">Droit applicable et juridiction
+                                </h2>
+                                <div class="prose text-gray-700">
+                                    <p>Les présentes CGU sont régies par le droit français.</p>
+                                    <p class="mt-4">En cas de litige, et à défaut de résolution amiable, les
+                                        tribunaux compétents seront ceux du siège social de ZANMA.</p>
+                                    <div class="bg-blue-50 p-4 rounded-lg mt-6">
+                                        <p class="text-blue-800"><i class="fas fa-handshake mr-2"></i> Nous vous
+                                            encourageons à nous contacter à <a href="mailto:contact@zanma.com"
+                                                class="text-blue-600 hover:underline">contact@zanma.com</a> avant
+                                            toute action en justice.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Acceptance -->
+                    <div class="mt-12 pt-8 border-t border-gray-200">
+                        <div class="bg-blue-50 rounded-xl p-6">
+                            <h3 class="font-bold text-blue-900 mb-3">Acceptation des Conditions</h3>
+                            <p class="text-gray-700 mb-4">En utilisant nos services, vous confirmez avoir lu,
+                                compris et accepté les présentes Conditions Générales d'Utilisation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Highlight current section in sidebar
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sticky-sidebar a');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-blue-900', 'font-medium');
+                    link.classList.add('text-blue-700');
+
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.remove('text-blue-700');
+                        link.classList.add('text-blue-900', 'font-medium');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - À propos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_site_web.css">
+</head>
+
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2  mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="active block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full bg-zanma-blue text-white py-24 premier_section_after_navbar">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">À propos de ZANMA DRIVER</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto fade-in">Notre mission est de révolutionner les
+                    déplacements urbains avec une solution simple, sûre et accessible à tous.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Notre histoire</h2>
+                    <p class="text-gray-600 mb-6 text-lg">Fondée en 2018, ZANMA DRIVER est née d'une simple idée :
+                        rendre les déplacements urbains plus accessibles, plus sûrs et plus agréables. Aujourd'hui, nous
+                        sommes fiers d'être l'une des principales plateformes de transport au Burkina Faso.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-zanma-blue text-3xl font-bold mb-2">5M+</div>
+                            <div class="text-gray-600">Trajets effectués</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-zanma-blue text-3xl font-bold mb-2">98%</div>
+                            <div class="text-gray-600">Satisfaction clients</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-zanma-blue text-3xl font-bold mb-2">10K+</div>
+                            <div class="text-gray-600">Chauffeurs actifs</div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-zanma-blue text-3xl font-bold mb-2">24/7</div>
+                            <div class="text-gray-600">Disponibilité</div>
+                        </div>
+                    </div>
+
+                    <a href="devenir-chauffeur.html"
+                        class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Rejoindre
+                        notre équipe</a>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
+                            alt="Équipe ZANMA DRIVER" class="w-full h-auto">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <p class="text-white text-lg font-medium">"Rejoindre ZANMA DRIVER a changé ma vie
+                                professionnelle. Flexibilité et revenus stables."</p>
+                            <p class="text-zanma-yellow mt-2">- Ouedraogo, conducteur depuis 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nos valeurs</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ce qui nous guide au quotidien pour vous offrir le
+                    meilleur service</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div
+                    class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Sécurité</h3>
+                    <p class="text-gray-600 text-center">Tous nos conducteurs sont rigoureusement sélectionnés et
+                        formés. Votre sécurité est notre priorité absolue.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in"
+                    style="transition-delay: 0.2s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Communauté</h3>
+                    <p class="text-gray-600 text-center">Nous construisons une communauté de confiance entre conducteurs
+                        et passagers, basée sur le respect mutuel.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in"
+                    style="transition-delay: 0.4s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Innovation</h3>
+                    <p class="text-gray-600 text-center">Nous développons constamment de nouvelles fonctionnalités pour
+                        améliorer votre expérience de transport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Notre Équipe Fondatrice</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Les visionnaires à l'origine de ZANMA DRIVER</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Membre 1 - Burkina -->
+                <div class="text-center fade-in">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1654155427842-a4a249bf693e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Boubacar Traoré" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Abdoulaye Sawadogo</h3>
+                    <p class="text-zanma-blue font-medium mb-2">Co-Fondateur & Directeur Général</p>
+                    <p class="text-sm text-gray-500 mb-1">Originaire de Ouagadougou, Burkina Faso</p>
+                    <p class="text-gray-600">Architecte de la vision stratégique et des partenariats clés.</p>
+                </div>
+
+                <!-- Membre 2 - Togo -->
+                <div class="text-center fade-in" style="transition-delay: 0.1s;">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1633395229973-f4d5fa6c27c7?q=80&w=2149&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Afi Gbédjé" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Afi Gbédjé</h3>
+                    <p class="text-zanma-blue font-medium mb-2">Co-Fondatrice & Directrice Technique</p>
+                    <p class="text-sm text-gray-500 mb-1">Originaire de Lomé, Togo</p>
+                    <p class="text-gray-600">Pionnière des solutions technologiques innovantes pour la mobilité urbaine.
+                    </p>
+                </div>
+
+                <!-- Membre 3 - Burkina -->
+                <div class="text-center fade-in" style="transition-delay: 0.2s;">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1686838328278-cd6e958699bf?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                            alt="Abdoulaye Sawadogo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Boubacar Traoré</h3>
+                    <p class="text-zanma-blue font-medium mb-2">Co-Fondateur & Directeur Opérationnel</p>
+                    <p class="text-sm text-gray-500 mb-1">Originaire de Bobo-Dioulasso, Burkina Faso</p>
+                    <p class="text-gray-600">Expert en gestion logistique et optimisation des réseaux de transport.</p>
+                </div>
+
+                <!-- Membre 4 - Togo -->
+                <div class="text-center fade-in" style="transition-delay: 0.3s;">
+                    <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1657412235453-8adb25a45cd0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                            alt="Dédé Ayité" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Dédé Ayité</h3>
+                    <p class="text-zanma-blue font-medium mb-2">Co-Fondatrice & Directrice Relations Clients</p>
+                    <p class="text-sm text-gray-500 mb-1">Originaire de Kara, Togo</p>
+                    <p class="text-gray-600">Garante de l'excellence du service client et de l'expérience utilisateur.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center fade-in">
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    "Réunis par notre passion commune pour l'innovation et le développement africain, nous avons créé
+                    ZANMA DRIVER
+                    pour révolutionner la mobilité urbaine en Afrique de l'Ouest."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-zanma-blue to-blue-800 text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Prêt à essayer ZANMA DRIVER ?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">Téléchargez l'application et bénéficiez de 15€ de crédit
+                pour votre premier trajet</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="#"
+                    class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-apple mr-2"></i> App Store
+                </a>
+                <a href="#"
+                    class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-google-play mr-2"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+</body>
+
+</html>

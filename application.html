@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - L'Application Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_site_web.css">
+    <style>
+        .phone-mockup {
+            background-image: url('assets/img/app_mobile.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .app-feature-card {
+            transition: all 0.3s ease;
+        }
+
+        .app-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-carousel {
+            scroll-snap-type: x mandatory;
+        }
+
+        .screenshot-item {
+            scroll-snap-align: start;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER LOGO" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul
+                        class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="active block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html" 
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full bg-zanma-blue text-white py-24 premier_section_after_navbar">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">L'application ZANMA DRIVER</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto fade-in">Votre mobilité simplifiée dans une application
+                    intuitive et puissante</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Presentation Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Téléchargez l'application</h2>
+                    <p class="text-gray-600 mb-6 text-lg">Disponible sur iOS et Android, l'application ZANMA DRIVER vous
+                        permet de commander un trajet ou une livraison en quelques secondes, suivre votre course en
+                        temps réel et payer en toute sécurité.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Notre application a été conçue pour être simple, rapide et
+                        intuitive, tout en offrant toutes les fonctionnalités dont vous avez besoin.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#"
+                            class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="font-medium">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-google-play text-xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Disponible sur</div>
+                                <div class="font-medium">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative">
+                        <div class="phone-mockup w-full max-w-xs mx-auto h-96 md:h-[500px] bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                            <div class="h-full rounded-2xl overflow-hidden">
+                                <img src="assets/img/app_mobile.png" alt="Application ZANMA DRIVER" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Fonctionnalités clés</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Découvrez ce qui rend notre application unique</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Réservation instantanée</h3>
+                    <p class="text-gray-600 text-center">Commandez un véhicule en moins de 30 secondes grâce à notre
+                        interface ultra-rapide.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in" style="transition-delay: 0.1s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-map-marked-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Suivi en temps réel</h3>
+                    <p class="text-gray-600 text-center">Visualisez en direct la position de votre chauffeur et le
+                        trajet estimé.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in" style="transition-delay: 0.2s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-money-bill-wave text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Paiement sécurisé</h3>
+                    <p class="text-gray-600 text-center">Payez directement dans l'application sans contact, avec
+                        plusieurs options disponibles.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in" style="transition-delay: 0.3s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-utensils text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Livraison de repas</h3>
+                    <p class="text-gray-600 text-center">Commandez dans vos restaurants préférés et suivez votre
+                        livraison en direct.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in" style="transition-delay: 0.4s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Sécurité renforcée</h3>
+                    <p class="text-gray-600 text-center">Partagez votre trajet avec vos proches et accédez à une
+                        assistance 24/7.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-xl shadow-md app-feature-card fade-in" style="transition-delay: 0.5s;">
+                    <div
+                        class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-history text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Historique complet</h3>
+                    <p class="text-gray-600 text-center">Retrouvez tous vos trajets et commandes passés avec les détails
+                        et reçus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Carousel -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Découvrez l'application</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Quelques captures d'écran de l'interface utilisateur
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="screenshot-carousel flex overflow-x-auto pb-8 -mx-4 scrollbar-hide"
+                    id="screenshot-carousel">
+                    <!-- Screenshot 1 -->
+                    <div class="screenshot-item flex-shrink-0 px-4 w-4/5 md:w-1/3">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets\img\itineraire_course.png"
+                                alt="Capture d'écran 1" class="w-full h-auto">
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 2 -->
+                    <div class="screenshot-item flex-shrink-0 px-4 w-4/5 md:w-1/3">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets\img\itineraire_course.png"
+                                alt="Capture d'écran 2" class="w-full h-auto">
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 3 -->
+                    <div class="screenshot-item flex-shrink-0 px-4 w-4/5 md:w-1/3">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets\img\itineraire_course.png"
+                                alt="Capture d'écran 3" class="w-full h-auto">
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 4 -->
+                    <div class="screenshot-item flex-shrink-0 px-4 w-4/5 md:w-1/3">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets\img\itineraire_course.png"
+                                alt="Capture d'écran 4" class="w-full h-auto">
+                        </div>
+                    </div>
+
+                    <!-- Screenshot 5 -->
+                    <div class="screenshot-item flex-shrink-0 px-4 w-4/5 md:w-1/3">
+                        <div class="bg-gray-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="assets\img\itineraire_course.png"
+                                alt="Capture d'écran 5" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button
+                    class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-white p-3 rounded-full shadow-md z-10 opacity-0 invisible transition-all duration-300 hover:bg-gray-100"
+                    aria-label="Précédent">
+                    <i class="fas fa-chevron-left text-zanma-blue"></i>
+                </button>
+                <button
+                    class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-white p-3 rounded-full shadow-md z-10 opacity-0 invisible transition-all duration-300 hover:bg-gray-100"
+                    aria-label="Suivant">
+                    <i class="fas fa-chevron-right text-zanma-blue"></i>
+                </button>
+            </div>
+
+            <div class="flex justify-center mt-8 space-x-2" id="carousel-indicators">
+                <!-- Indicators will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver App Section -->
+    <section class="w-full w-full py-16 md:py-24 bg-zanma-blue text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Application Chauffeur</h2>
+                    <p class="text-lg mb-6">Une application dédiée pour nos chauffeurs partenaires, conçue pour une
+                        utilisation optimale et des revenus maximaux.</p>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Acceptation rapide des courses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Navigation GPS intégrée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Suivi des gains en temps réel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-zanma-yellow mr-3 mt-1"></i>
+                            <span>Support 24/7 intégré</span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#"
+                            class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="font-medium">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-google-play text-xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Disponible sur</div>
+                                <div class="font-medium">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative">
+                        <div class="phone-mockup w-full max-w-xs mx-auto h-96 md:h-[500px] bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                            <div class="h-full rounded-2xl overflow-hidden">
+                                <img src="assets/img/app_mobile.png" alt="Application ZANMA DRIVER" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-zanma-blue to-blue-800 text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Prêt à essayer ZANMA DRIVER ?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">Téléchargez l'application et bénéficiez de 15€ de crédit
+                pour votre premier trajet</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="#"
+                    class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-apple mr-2"></i> App Store
+                </a>
+                <a href="#"
+                    class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-google-play mr-2"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        // Screenshot Carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('screenshot-carousel');
+            const items = carousel.querySelectorAll('.screenshot-item');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const indicatorsContainer = document.getElementById('carousel-indicators');
+
+            let currentIndex = 0;
+            const itemWidth = items[0].offsetWidth;
+            const gap = 16; // Correspond à px-4 (1rem = 16px)
+
+            // Create indicators
+            items.forEach((_, index) => {
+                const indicator = document.createElement('button');
+                indicator.className = `w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300 ${index === 0 ? 'bg-opacity-100' : ''}`;
+                indicator.dataset.index = index;
+                indicator.addEventListener('click', () => {
+                    goToIndex(index);
+                });
+                indicatorsContainer.appendChild(indicator);
+            });
+
+            // Update carousel position
+            function updateCarousel() {
+                carousel.scrollTo({
+                    left: currentIndex * (itemWidth + gap),
+                    behavior: 'smooth'
+                });
+
+                // Update active indicator
+                document.querySelectorAll('#carousel-indicators button').forEach((indicator, index) => {
+                    indicator.classList.toggle('bg-opacity-100', index === currentIndex);
+                    indicator.classList.toggle('bg-opacity-50', index !== currentIndex);
+                });
+
+                // Show/hide navigation buttons
+                prevBtn.classList.toggle('opacity-0', currentIndex === 0);
+                prevBtn.classList.toggle('invisible', currentIndex === 0);
+                nextBtn.classList.toggle('opacity-0', currentIndex === items.length - 1);
+                nextBtn.classList.toggle('invisible', currentIndex === items.length - 1);
+            }
+
+            // Go to specific index
+            function goToIndex(index) {
+                currentIndex = index;
+                updateCarousel();
+            }
+
+            // Navigation
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < items.length - 1) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            // Show/hide navigation on hover
+            carousel.addEventListener('mouseenter', () => {
+                prevBtn.classList.remove('opacity-0', 'invisible');
+                nextBtn.classList.remove('opacity-0', 'invisible');
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                if (currentIndex !== 0) prevBtn.classList.add('opacity-0', 'invisible');
+                if (currentIndex !== items.length - 1) nextBtn.classList.add('opacity-0', 'invisible');
+            });
+
+            // Initialize
+            updateCarousel();
+        });
+    </script>
+</body>
+
+</html>

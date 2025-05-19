@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - Devenir Chauffeur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style_site_web.css">
+</head>
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul
+                        class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="active block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html" 
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative w-full bg-zanma-blue text-white py-24 premier_section_after_navbar">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">Devenez chauffeur ZANMA DRIVER</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto fade-in">Gagnez un revenu flexible en conduisant avec notre plateforme sécurisée</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pourquoi conduire avec ZANMA DRIVER ?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Découvrez les avantages de rejoindre notre communauté de chauffeurs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-euro-sign text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Revenus attractifs</h3>
+                    <p class="text-gray-600 text-center">Gagnez jusqu'à 1 500€ par semaine selon vos disponibilités.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-calendar-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Flexibilité totale</h3>
+                    <p class="text-gray-600 text-center">Travaillez quand vous voulez, aussi peu ou autant que vous le souhaitez.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 fade-in" style="transition-delay: 0.4s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-headset text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Support 24/7</h3>
+                    <p class="text-gray-600 text-center">Notre équipe est disponible à tout moment pour vous aider.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 slide-in-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Conditions pour devenir chauffeur</h2>
+                    <p class="text-gray-600 mb-8 text-lg">Pour garantir la sécurité et la qualité de service, tous nos chauffeurs doivent répondre à ces critères :</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-gray-900">Avoir au moins 21 ans</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-gray-900">Permis de conduire valide depuis 3 ans minimum</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-gray-900">Casier judiciaire vierge</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-gray-900">Véhicule en bon état (moins de 8 ans)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-sm"></i>
+                            </div>
+                            <span class="text-gray-900">Assurance professionnelle</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-6 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Postuler maintenant</a>
+                </div>
+                <div class="md:w-1/2 slide-in-right">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1631&q=80" alt="Chauffeur ZANMA DRIVER" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comment devenir chauffeur ?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Le processus en 4 étapes simples</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Inscription en ligne</h3>
+                    <p class="text-gray-600 text-center">Remplissez notre formulaire en 5 minutes seulement.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in" style="transition-delay: 0.1s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Vérification</h3>
+                    <p class="text-gray-600 text-center">Nous vérifions vos documents (permis, assurance, etc.).</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in" style="transition-delay: 0.2s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Formation</h3>
+                    <p class="text-gray-600 text-center">Formation en ligne et en personne pour bien démarrer.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl fade-in" style="transition-delay: 0.3s;">
+                    <div class="bg-zanma-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Commencez à conduire</h3>
+                    <p class="text-gray-600 text-center">Activez l'appli et recevez vos premières courses !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Driver Testimonials -->
+    <section class="w-full py-16 md:py-24 bg-zanma-blue text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Témoignages de chauffeurs</h2>
+                <p class="text-xl max-w-3xl mx-auto">Découvrez ce que disent nos chauffeurs partenaires</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl fade-in">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Thomas" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Thomas R.</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Je suis conducteur ZANMA DRIVER depuis 2 ans. La plateforme est intuitive et me permet de gérer mes horaires comme je veux. Les pourboires sont fréquents!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl fade-in" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Marc" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Marc T.</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"Je gagne environ 1 200€ par semaine en conduisant environ 30 heures. C'est le complément idéal à mon activité principale."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-xl fade-in" style="transition-delay: 0.4s;">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Sophie" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold">Sophie L.</h4>
+                            <div class="flex text-zanma-yellow">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="italic">"En tant que femme, je me sens en sécurité avec le système de notation et le support disponible 24/7. Je recommande ZANMA DRIVER à toutes mes amies."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">L'application chauffeur</h2>
+                    <p class="text-gray-600 mb-8 text-lg">Notre application intuitive vous permet de gérer facilement votre activité :</p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <span class="text-gray-900">Acceptation rapide des courses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <span class="text-gray-900">Navigation GPS intégrée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="text-gray-900">Suivi de vos revenus en temps réel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="bg-zanma-blue text-white p-2 rounded-full mr-4">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span class="text-gray-900">Chat avec le support 24/7</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-apple text-2xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Télécharger sur</div>
+                                <div class="font-medium">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-lg flex items-center justify-center transition duration-300">
+                            <i class="fab fa-google-play text-xl mr-3"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Disponible sur</div>
+                                <div class="font-medium">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <div class="relative">
+                        <div class="phone-mockup w-full max-w-xs mx-auto h-96 md:h-[500px] bg-gray-900 rounded-3xl p-2 shadow-2xl">
+                            <div class="h-full rounded-2xl overflow-hidden">
+                                <img src="assets/img/app_mobile.png" alt="Application ZANMA DRIVER" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Questions fréquentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trouvez les réponses aux questions les plus posées</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Combien puis-je gagner avec ZANMA DRIVER ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Les revenus varient selon votre disponibilité et votre localisation. En moyenne, nos chauffeurs gagnent entre 800€ et 1 500€ par semaine pour 30 à 40 heures de conduite. Les heures de pointe et les événements spéciaux peuvent augmenter significativement vos gains.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.1s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Quels sont les frais pour les chauffeurs ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>ZANMA DRIVER prélève une commission de 15% sur chaque course. Ce taux est parmi les plus bas du marché et inclut l'accès à notre plateforme, le support client 24/7 et les mises à jour de l'application. Aucun frais supplémentaire n'est appliqué.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.2s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Comment sont gérés les paiements ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Les paiements sont effectués chaque semaine directement sur votre compte bancaire. Vous pouvez suivre vos gains en temps réel dans l'application chauffeur. Aucune transaction en espèces n'est nécessaire, tout est géré électroniquement.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in" style="transition-delay: 0.3s;">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left">
+                        <h3 class="text-lg font-medium text-gray-900">Puis-je conduire avec mon véhicule personnel ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue ml-4 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content mt-4 text-gray-600 hidden">
+                        <p>Oui, à condition que votre véhicule ait moins de 8 ans, soit en excellent état et dispose d'une assurance professionnelle. Nous acceptons les voitures 4 ou 5 portes. Des exigences supplémentaires s'appliquent pour les services premium.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-block bg-zanma-blue hover:bg-blue-800 text-white px-8 py-3 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Voir toutes les questions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-zanma-blue to-blue-800 text-white">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fade-in">Prêt à commencer ?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto fade-in">Rejoignez notre communauté de chauffeurs professionnels dès aujourd'hui</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+                <a href="#" class="bg-white hover:bg-gray-100 text-zanma-blue px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Postuler maintenant</a>
+                <a href="#" class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg text-lg font-medium transition duration-300 transform hover:scale-105">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>

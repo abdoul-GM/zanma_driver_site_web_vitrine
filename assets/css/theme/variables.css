@@ -1,0 +1,43 @@
+/* variables.css */
+:root {
+    /* Couleurs */
+    --primary-blue: #11286b;
+    --primary-yellow: #ffe435;
+    --primary-blue-transparent: rgba(30, 58, 138, 0.85);
+    --primary-yellow-transparent: rgba(250, 204, 21, 0.85);
+    --secondary-gray-transparent: rgba(255, 255, 255, 0.3);
+    
+    /* BG */
+    --bg-light: #f1f1f1;
+    --bg-dark: #111827;
+    --bg-gray: #c1c1c1;
+
+    /* Textes */
+    --text-gray: #6b7280;
+    --text-dark: #1f2937;
+    --text-light: #f9fafb;
+    
+    /* Bordures */
+    --border-gray: #e2e8f0;
+    --border-radius: 0.375rem;
+    
+    /* linear-gradient */
+    --gradient-sider-bg: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+
+    /* Ombres */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    /* Transitions */
+    --transition-fast: all 0.2s ease-in-out;
+    --transition-normal-3s: all 0.3s ease;
+    --transition-normal-6s: all 0.6s ease;
+    --transition-normal-opacity-6s: all 0.6s ease;
+    
+    /* Espacements */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+  }

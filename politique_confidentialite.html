@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité | ZANMA Driver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+        }
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+        .highlight:after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: #ffe435;
+            opacity: 0.4;
+            z-index: -1;
+        }
+        .section-anchor {
+            display: block;
+            position: relative;
+            top: -100px;
+            visibility: hidden;
+        }
+        .nav-link:hover {
+            color: #11286b;
+        }
+        .nav-link:hover:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffe435;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800">
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="assets/img/logo_zanma/258.png" alt="ZANMA DRIVER LOGO" class="logo-image">
+                <span>ZANMA DRIVER</span>
+            </div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="bg-white fixed top-0 z-50 w-full border-gray-200 dark:bg-gray-900 shadow-lg transition-transform duration-300" id="navbar">
+        <div class="contenair_nav_desktop mx-auto p-4">
+            <!-- Ligne 1 : Logo + Boutons -->
+            <div class="ligne_nav_1 flex items-center justify-between mb-4">
+                <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="assets/img/logo_zanma/64.png" class="h-8" alt="ZANMA DRIVER Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        <span class="text-2xl font-bold text-zanma-blue">ZANMA <span
+                                class="text-zanma-yellow">DRIVER</span></span>
+                    </span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="connexion.html"
+                            class="bg-zanma-blue hover:bg-blue-800 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-300">Connexion</a>
+                        <a href="inscription.html"
+                            class="bg-zanma-yellow hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-md text-sm font-medium transition duration-300">Inscription</a>
+                    </div>
+                    <button data-collapse-toggle="navbar-cta" type="button" id="mobile-menu-button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                        <span class="sr-only">Mobile Menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ligne 2 : Menu -->
+            <div class="ligne_nav_2 w-full md:flex md:items-center justify-center" id="navbar-cta">
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                    <ul class="nav_bare_menu flex flex-wrap font-medium p-4 md:px-0 md:py-2 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700
+                                overflow-x-auto whitespace-nowrap text-sm">
+                        <li>
+                            <a href="index.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="a-propos.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                À propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="devenir-chauffeur.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Chauffeur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="restaurant.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Restaurant</a>
+                        </li>
+                        <li>
+                            <a href="call-center.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Call Center</a>
+                        </li>
+                        <li>
+                            <a href="application.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                L'application</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Accueil</a>
+                <a href="a-propos.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">À propos</a>
+                <a href="devenir-chauffeur.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Chauffeur</a>
+                <a href="restaurant.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Restaurant</a>
+                <a href="call-center.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Call Center</a>
+                <a href="application.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">L'application</a>
+                <a href="temoignages.html"
+                    class="block px-3 py-2 text-base font-medium text-gray-900 hover:text-zanma-blue">Témoignages</a>
+                <div class="pt-4 pb-2">
+                    <a href="connexion.html"
+                        class="block w-full px-4 py-2 text-center text-white bg-zanma-blue rounded-md hover:bg-blue-800 mb-2">Connexion</a>
+                    <a href="inscription.html"
+                        class="block w-full px-4 py-2 text-center text-gray-900 bg-zanma-yellow rounded-md hover:bg-yellow-500">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12 premier_section_after_navbar">
+        <div class="flex flex-col lg:flex-row">
+            <!-- Table of Contents (Desktop) -->
+            <aside class="hidden lg:block lg:w-1/4 xl:w-1/5 pr-8 mb-8">
+                <div class="sticky top-24">
+                    <h3 class="text-lg font-semibold text-blue-900 mb-4">Table des matières</h3>
+                    <nav id="navbar" class="space-y-2">
+                        <a href="#introduction" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Introduction</a>
+                        <a href="#data-collected" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Données collectées</a>
+                        <a href="#data-usage" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Utilisation des données</a>
+                        <a href="#data-sharing" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Partage avec des tiers</a>
+                        <a href="#security" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Sécurité des données</a>
+                        <a href="#cookies" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Cookies</a>
+                        <a href="#user-rights" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Droits des utilisateurs</a>
+                        <a href="#storage" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Stockage</a>
+                        <a href="#changes" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Modifications</a>
+                        <a href="#contact" class="block text-gray-700 hover:text-blue-900 nav-link relative pb-1">Contact</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Privacy Policy Content -->
+            <div class="lg:w-3/4 xl:w-4/5 bg-white rounded-lg shadow-sm p-6 md:p-8">
+                <div class="mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Politique de Confidentialité</h1>
+                    <p class="text-xl text-gray-600">Votre vie privée est importante pour nous.</p>
+                </div>
+
+                <!-- Introduction -->
+                <section id="introduction" class="mb-12">
+                    <span class="section-anchor" id="introduction-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Introduction</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Chez ZANMA Driver, nous nous engageons à protéger votre vie privée et vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, partageons et protégeons vos informations lorsque vous utilisez nos services.</p>
+                        <p class="mb-4">En utilisant nos services, vous acceptez les pratiques décrites dans cette politique. Nous pouvons modifier cette politique de temps à autre, alors veuillez la consulter régulièrement pour vous tenir informé des mises à jour.</p>
+                    </div>
+                </section>
+
+                <!-- Data Collected -->
+                <section id="data-collected" class="mb-12">
+                    <span class="section-anchor" id="data-collected-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Données collectées</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous collectons différents types d'informations pour fournir et améliorer nos services :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li><strong>Informations personnelles :</strong> Nom, adresse e-mail, numéro de téléphone, adresse, photo, etc.</li>
+                            <li><strong>Informations de paiement :</strong> Détails de carte de crédit ou autres informations de paiement.</li>
+                            <li><strong>Données d'utilisation :</strong> Informations sur la façon dont vous utilisez nos services.</li>
+                            <li><strong>Données de localisation :</strong> Pour les chauffeurs et les clients, nous collectons des données de localisation précises.</li>
+                            <li><strong>Données techniques :</strong> Adresse IP, type de navigateur, version du système d'exploitation, etc.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Data Usage -->
+                <section id="data-usage" class="mb-12">
+                    <span class="section-anchor" id="data-usage-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Utilisation des données</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous utilisons les données collectées pour diverses finalités :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li>Fournir, maintenir et améliorer nos services</li>
+                            <li>Gérer votre compte et votre profil</li>
+                            <li>Faciliter les paiements et les transactions</li>
+                            <li>Communiquer avec vous (support client, notifications, etc.)</li>
+                            <li>Personnaliser et améliorer votre expérience utilisateur</li>
+                            <li>Effectuer des analyses et des recherches</li>
+                            <li>Prévenir la fraude et assurer la sécurité</li>
+                            <li>Se conformer aux obligations légales</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Data Sharing -->
+                <section id="data-sharing" class="mb-12">
+                    <span class="section-anchor" id="data-sharing-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Partage des données avec des tiers</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous pouvons partager vos informations avec des tiers dans les cas suivants :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li><strong>Fournisseurs de services :</strong> Processeurs de paiement, hébergeurs, services d'analyse, etc.</li>
+                            <li><strong>Partenaires commerciaux :</strong> Pour offrir des services conjoints ou des promotions.</li>
+                            <li><strong>Autorités légales :</strong> Lorsque requis par la loi ou pour répondre à des demandes légales.</li>
+                            <li><strong>Transactions commerciales :</strong> En cas de fusion, acquisition ou vente d'actifs.</li>
+                        </ul>
+                        <p class="mb-4">Nous exigeons que tous les tiers respectent la sécurité de vos données personnelles et les traitent conformément à la loi.</p>
+                    </div>
+                </section>
+
+                <!-- Security -->
+                <section id="security" class="mb-12">
+                    <span class="section-anchor" id="security-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Sécurité des données</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, altération, divulgation ou destruction.</p>
+                        <p class="mb-4">Parmi ces mesures :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li>Chiffrement des données sensibles</li>
+                            <li>Systèmes de contrôle d'accès</li>
+                            <li>Audits de sécurité réguliers</li>
+                            <li>Formation du personnel à la protection des données</li>
+                        </ul>
+                        <p class="mb-4">Malgré nos efforts, aucune méthode de transmission ou de stockage électronique n'est totalement sécurisée. Nous ne pouvons donc garantir une sécurité absolue.</p>
+                    </div>
+                </section>
+
+                <!-- Cookies -->
+                <section id="cookies" class="mb-12">
+                    <span class="section-anchor" id="cookies-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Cookies et technologies similaires</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous utilisons des cookies et des technologies similaires pour :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li>Fonctionnalité de base du site</li>
+                            <li>Améliorer votre expérience utilisateur</li>
+                            <li>Analyser l'utilisation de nos services</li>
+                            <li>Personnaliser le contenu et les publicités</li>
+                        </ul>
+                        <p class="mb-4">Vous pouvez contrôler l'utilisation des cookies au niveau du navigateur. Cependant, la désactivation des cookies peut affecter certaines fonctionnalités de nos services.</p>
+                    </div>
+                </section>
+
+                <!-- User Rights -->
+                <section id="user-rights" class="mb-12">
+                    <span class="section-anchor" id="user-rights-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Droits des utilisateurs</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Conformément à la réglementation sur la protection des données, vous disposez des droits suivants :</p>
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium text-blue-900 mb-2">Droit d'accès</h3>
+                                <p>Obtenir confirmation que nous traitons vos données et y accéder.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium text-blue-900 mb-2">Droit de rectification</h3>
+                                <p>Demander la correction de données inexactes ou incomplètes.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium text-blue-900 mb-2">Droit à l'effacement</h3>
+                                <p>Demander la suppression de vos données personnelles.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h3 class="font-medium text-blue-900 mb-2">Droit d'opposition</h3>
+                                <p>Vous opposer au traitement de vos données dans certains cas.</p>
+                            </div>
+                        </div>
+                        <p class="mb-4">Pour exercer ces droits, veuillez nous contacter via les coordonnées fournies ci-dessous.</p>
+                    </div>
+                </section>
+
+                <!-- Storage -->
+                <section id="storage" class="mb-12">
+                    <span class="section-anchor" id="storage-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Stockage et durée de conservation</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous conservons vos données personnelles aussi longtemps que nécessaire pour fournir nos services et nous conformer à nos obligations légales.</p>
+                        <p class="mb-4">Les critères que nous utilisons pour déterminer les durées de conservation comprennent :</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li>La durée nécessaire pour fournir les services demandés</li>
+                            <li>La durée pendant laquelle vous avez un compte avec nous</li>
+                            <li>Les obligations légales, contractuelles ou réglementaires</li>
+                            <li>Les délais de prescription applicables</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Changes -->
+                <section id="changes" class="mb-12">
+                    <span class="section-anchor" id="changes-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Modifications de la politique</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle politique sur cette page et en mettant à jour la date de "Dernière mise à jour".</p>
+                        <p class="mb-4">Nous vous encourageons à consulter régulièrement cette politique pour rester informé de la manière dont nous protégeons vos informations.</p>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section id="contact" class="mb-8">
+                    <span class="section-anchor" id="contact-anchor"></span>
+                    <h2 class="text-2xl font-semibold text-blue-900 mb-4 flex items-center">
+                        <span class="highlight">Contact</span>
+                    </h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits en matière de protection des données, veuillez nous contacter :</p>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="flex items-start mb-4">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-blue-900">Par e-mail</h3>
+                                    <p>privacy@zanmadriver.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-blue-900">Par téléphone</h3>
+                                    <p>+226 23 45 67 89</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Last Updated -->
+                <div class="border-t border-gray-200 pt-6">
+                    <p class="text-sm text-gray-500">Dernière mise à jour : 15 juin 2023</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-8/10 mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-zanma-yellow mb-4">ZANMA DRIVER</h3>
+                    <p class="text-gray-400">La solution de transport urbain la plus rapide et sécurisée. Disponible
+                        24h/24, 7j/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Liens rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
+                        <li><a href="a-propos.html" class="text-gray-400 hover:text-white transition duration-300">À
+                                propos</a></li>
+                        <li><a href="devenir-chauffeur.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Devenir chauffeur</a>
+                        </li>
+                        <li><a href="restaurant.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Restaurant</a></li>
+                        <li><a href="call-center.html"
+                                class="text-gray-400 hover:text-white transition duration-300">Call Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Légal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="conditions-generales.html" class="text-gray-400 hover:text-white transition duration-300">Conditions
+                                générales</a></li>
+                        <li><a href="politique_confidentialite.html" class="text-gray-400 hover:text-white transition duration-300">Politique de
+                                confidentialité</a></li>
+                        <li><a href="faq.html" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">01 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center w-full">
+                            <i class="fas fa-envelope text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400 break-all">contact@zanmadriver.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-zanma-yellow mr-2"></i>
+                            <span class="text-gray-400">15 Rue du Transport, 75010 ouaga</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 ZANMA DRIVER. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-zanma-blue text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-800">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/nav-bare.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle functionality would go here
+        // This is just a placeholder for the actual implementation
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function() {
+                // Implementation for mobile menu toggle
+                console.log('Mobile menu clicked');
+            });
+        }
+    </script>
+</body>
+</html>
