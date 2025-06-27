@@ -118,17 +118,17 @@ section {
 
 .branch-connector {
     position: absolute;
-    top: -20px;
+    top: -70px;
     left: 50%;
     width: 2px;
-    height: 20px;
+    height: 80px;
     background: linear-gradient(to bottom, #1e40af, transparent);
     transform: translateX(-50%);
 }
 
 .main-connector {
     position: relative;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .main-connector::before {
@@ -164,11 +164,12 @@ section {
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: xor;
     -webkit-mask-composite: xor;
+    pointer-events: none;
 }
 
 .arrow-down {
     position: relative;
-    margin: 2rem auto;
+    margin: 1rem auto;
     width: 40px;
     height: 40px;
 }
@@ -176,7 +177,7 @@ section {
 .arrow-down::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: -10%;
     left: 50%;
     width: 20px;
     height: 20px;
@@ -220,4 +221,94 @@ section {
     font-size: 12px;
     font-weight: bold;
     box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 1279px) {
+    .branch-connector {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: linear-gradient(to bottom, #1e40af, transparent);
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Card des services de ZANMA DRIVER */
+.section {
+    position: relative;
+    width: 98%;
+    padding: 30px 4%;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fdbb2d;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: var(--primary-blue-transparent);
+    color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    height: 200px;
+    background: linear-gradient(45deg, var(--primary-blue-transparent), var(--primary-yellow-transparent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.card-content h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    /* largeur du trait */
+    height: 3px;
+    /* épaisseur du trait */
+    background-color: red;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: var(--text-gray-light);
 }
