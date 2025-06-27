@@ -6,13 +6,20 @@
     --primary-blue-transparent: rgba(30, 58, 138, 0.85);
     --primary-yellow-transparent: rgba(250, 204, 21, 0.85);
     --secondary-gray-transparent: rgba(255, 255, 255, 0.3);
-    
+
+    --navbar-height: 131px;
+
     /* BG */
     --bg-light: #f1f1f1;
     --bg-dark: #111827;
     --bg-gray: #c1c1c1;
 
+    /* Couleurs de texte */
+    --white: #ffffff;
+    --black: #000000;
+
     /* Textes */
+    --text-gray-light: #d1d5db;
     --text-gray: #6b7280;
     --text-dark: #1f2937;
     --text-light: #f9fafb;

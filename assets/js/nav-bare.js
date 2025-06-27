@@ -1,32 +1,53 @@
-
 let lastScrollTop = 0;
+let ticking = false;
+let isNavbarHidden = false;
+const scrollDelta = 10; // seuil de tolérance
+const hideThreshold = 131; // ne pas cacher la navbar avant ce scroll
 const navbar = document.getElementById('navbar');
 const firstSection = document.querySelector('.premier_section_after_navbar');
 
-// Obtenir et appliquer dynamiquement la hauteur de la nav
 const updateSectionMargin = () => {
-    const navHeight = navbar.offsetHeight;
-    const isVisible = navbar.style.transform !== "translateY(-100%)";
-    firstSection.style.marginTop = isVisible ? `${navHeight}px` : '0';
+    if (!navbar || !firstSection) return;
+    if (!isNavbarHidden) {
+        firstSection.classList.add('mt-navbar');
+        firstSection.classList.remove('mt-none');
+    } else {
+        firstSection.classList.add('mt-none');
+        firstSection.classList.remove('mt-navbar');
+    }
 };
 
-window.addEventListener("scroll", function () {
+const handleScroll = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollDiff = scrollTop - lastScrollTop;
 
-    if (scrollTop > lastScrollTop) {
-        // Scroll vers le bas : cacher la navbar
-        navbar.style.transform = "translateY(-100%)";
-    } else {
-        // Scroll vers le haut : afficher la navbar
-        navbar.style.transform = "translateY(0)";
+    // Ignorer les petits mouvements
+    if (Math.abs(scrollDiff) < scrollDelta) {
+        ticking = false;
+        return;
+    }
+
+    if (scrollDiff > 0 && !isNavbarHidden && scrollTop >= hideThreshold) {
+        // Scroll vers le bas ET dépasse le seuil → cacher navbar
+        navbar.classList.add('nav-hidden');
+        isNavbarHidden = true;
+    } else if (scrollDiff < 0 && isNavbarHidden) {
+        // Scroll vers le haut → afficher navbar
+        navbar.classList.remove('nav-hidden');
+        isNavbarHidden = false;
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    ticking = false;
+};
 
-    updateSectionMargin();
+// Scroll optimisé
+window.addEventListener("scroll", () => {
+    if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+    }
 });
 
-// Initialiser la marge au chargement
 window.addEventListener('load', updateSectionMargin);
 window.addEventListener('resize', updateSectionMargin);
-

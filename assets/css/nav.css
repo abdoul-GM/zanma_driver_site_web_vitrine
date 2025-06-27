@@ -1,5 +1,33 @@
 
 @import url('theme/variables.css');
+.mt-navbar {
+    margin-top: var(--navbar-height, 60px); /* valeur par défaut au cas où */
+    transition: margin-top 0.3s ease;
+}
+
+.mt-none {
+    margin-top: 0;
+    transition: margin-top 0.3s ease;
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1000;
+    z-index: 50;
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.premier_section_after_navbar {
+    transition: margin-top 0.3s ease;
+}
 
 .contenair_nav_desktop {
     max-width: 90%;

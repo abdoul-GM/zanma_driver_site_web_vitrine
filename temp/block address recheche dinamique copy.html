@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barre de Navigation Intelligente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 200vh;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(25, 25, 35, 0.95);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1000;
+        }
+        
+        .nav-hidden {
+            transform: translateY(-100%);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fdbb2d;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(253, 187, 45, 0.2);
+        }
+        
+        .premier_section_after_navbar {
+            padding: 120px 5% 80px;
+            margin-top: 0;
+            transition: margin-top 0.4s ease;
+        }
+        
+        .mt-navbar {
+            margin-top: 80px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+        
+        .section {
+            padding: 100px 5%;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 50px 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fdbb2d;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background: rgba(25, 25, 35, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-img {
+            height: 200px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background: rgba(10, 10, 20, 0.9);
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(25, 25, 35, 0.9);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .premier_section_after_navbar {
+                padding-top: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar" class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-icon">🚀</span>
+            SmartNav
+        </a>
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#services">Services</a>
+            <a href="#projets">Projets</a>
+            <a href="#equipe">Équipe</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="accueil" class="premier_section_after_navbar">
+        <div class="container">
+            <h1>Navigation Intelligente</h1>
+            <p>Cette barre de navigation disparaît lorsque vous faites défiler vers le bas et réapparaît lorsque vous faites défiler vers le haut. La solution est optimisée pour éviter les vibrations et les problèmes de performance.</p>
+            <p>Faites défiler vers le bas pour voir l'effet en action...</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img">💻</div>
+                    <div class="card-content">
+                        <h3>Développement Web</h3>
+                        <p>Création de sites web modernes et réactifs avec les dernières technologies.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">📱</div>
+                    <div class="card-content">
+                        <h3>Applications Mobiles</h3>
+                        <p>Conception et développement d'applications natives et hybrides.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">🎨</div>
+                    <div class="card-content">
+                        <h3>Design UI/UX</h3>
+                        <p>Interfaces utilisateur intuitives et expériences utilisateur exceptionnelles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="section">
+        <div class="container">
+            <h2>Projets Récents</h2>
+            <p>Découvrez nos derniers projets réalisés pour des clients satisfaits à travers le monde.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #2193b0, #6dd5ed);">🌐</div>
+                    <div class="card-content">
+                        <h3>Portail Entreprise</h3>
+                        <p>Solution complète pour la gestion des ressources humaines et de la communication interne.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #f46b45, #eea849);">🛒</div>
+                    <div class="card-content">
+                        <h3>Boutique en ligne</h3>
+                        <p>Plateforme e-commerce avec système de paiement sécurisé et gestion des stocks.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #834d9b, #d04ed6);">📊</div>
+                    <div class="card-content">
+                        <h3>Tableau de Bord Analytique</h3>
+                        <p>Visualisation de données en temps réel pour la prise de décision stratégique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipe" class="section">
+        <div class="container">
+            <h2>Notre Équipe</h2>
+            <p>Une équipe passionnée de professionnels dédiés à l'excellence technique et à la satisfaction client.</p>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #00c9ff, #92fe9d);">👨‍💻</div>
+                    <div class="card-content">
+                        <h3>Alex Dupont</h3>
+                        <p>Directeur Technique - 10 ans d'expérience en développement web.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #f857a6, #ff5858);">👩‍🎨</div>
+                    <div class="card-content">
+                        <h3>Sophie Martin</h3>
+                        <p>Designer UX/UI - Spécialiste en interfaces intuitives et accessibles.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img" style="background: linear-gradient(45deg, #a8ff78, #78ffd6);">👨‍💼</div>
+                    <div class="card-content">
+                        <h3>Thomas Leroy</h3>
+                        <p>Chef de Projet - Garant de la qualité et des délais de livraison.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2023 SmartNav. Tous droits réservés.</p>
+            <p>Solution de navigation optimisée pour une expérience utilisateur fluide.</p>
+        </div>
+    </footer>
+
+    <div class="scroll-indicator">Position de défilement: <span id="scrollPosition">0</span>px</div>
+
+    <script>
+        let lastScrollTop = 0;
+        let ticking = false;
+        let isNavbarHidden = false;
+        const scrollDelta = 10; // seuil de tolérance
+        const navbar = document.getElementById('navbar');
+        const firstSection = document.querySelector('.premier_section_after_navbar');
+        const scrollPositionElement = document.getElementById('scrollPosition');
+
+        // Solution au problème de vibration
+        // On utilise une classe pour gérer la marge de la première section
+        // Cette classe est appliquée une seule fois au chargement
+        const initializeSectionMargin = () => {
+            if (!navbar || !firstSection) return;
+            firstSection.classList.add('mt-navbar');
+        };
+
+        // Gestion du défilement optimisée
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollDiff = scrollTop - lastScrollTop;
+            
+            // Mise à jour de l'indicateur de défilement
+            scrollPositionElement.textContent = Math.round(scrollTop);
+            
+            // Ignorer les petits mouvements et le défilement vers le haut en haut de page
+            if (Math.abs(scrollDiff) < scrollDelta || scrollTop < 50) {
+                ticking = false;
+                return;
+            }
+
+            // Scroll vers le bas → cacher navbar
+            if (scrollDiff > 0 && !isNavbarHidden) {
+                navbar.classList.add('nav-hidden');
+                isNavbarHidden = true;
+            } 
+            // Scroll vers le haut → afficher navbar
+            else if (scrollDiff < 0 && isNavbarHidden) {
+                navbar.classList.remove('nav-hidden');
+                isNavbarHidden = false;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            ticking = false;
+        };
+
+        // Gestion optimisée des événements de défilement
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
+        });
+
+        // Initialisation
+        window.addEventListener('load', initializeSectionMargin);
+        window.addEventListener('resize', initializeSectionMargin);
+    </script>
+</body>
+</html>

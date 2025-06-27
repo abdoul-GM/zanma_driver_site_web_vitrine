@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Selector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .dropdown-enter {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        .dropdown-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 200ms, transform 200ms;
+        }
+        .dropdown-exit {
+            opacity: 1;
+        }
+        .dropdown-exit-active {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 200ms, transform 200ms;
+        }
+        
+        .gps-icon {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl">
+        <div class="bg-white rounded-xl shadow-lg p-6 space-y-4">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">Trouvez votre service</h1>
+            
+            <!-- Service Dropdown -->
+            <div class="relative">
+                <button id="serviceDropdownButton" class="w-full flex justify-between items-center p-4 border border-gray-200 rounded-lg hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all">
+                    <span class="text-gray-600">Sélectionnez un service</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+                
+            </div>
+            
+            <!-- Address Search -->
+            <div class="relative">
+                <div class="flex items-center border border-gray-200 rounded-lg hover:border-gray-300 focus-within:border-yellow-500 focus-within:ring-2 focus-within:ring-yellow-500 transition-all">
+                    <div class="pl-3 pr-2 text-gray-400">
+                        <span>📍</span>
+                    </div>
+                    <input type="text" id="addressInput" placeholder="Rechercher une adresse..." class="flex-1 py-3 px-2 focus:outline-none text-gray-700">
+                    <button id="gpsButton" class="p-2 text-gray-400 hover:text-yellow-600 transition-colors gps-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="flex justify-end">
+                <button id="submitButton" class="flex items-center justify-center p-3 bg-yellow-500 hover:bg-yellow-600 rounded-lg shadow-md text-white font-medium transition-colors">
+                    <span class="mr-2">Valider</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<div id="serviceDropdown" class="hidden absolute z-50 mt-2 bg-white rounded-lg shadow-xl border border-gray-200 divide-y divide-gray-100">
+        <div class="p-4">
+            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Principaux services</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="service-item" data-value="taxi">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Taxi</span>
+                    </div>
+                </div>
+                <div class="service-item" data-value="livraison-colis">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Livraison de colis</span>
+                    </div>
+                </div>
+                <div class="service-item" data-value="achats-livraison">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Achats Livraison</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-4">
+            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">Plus de services</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="service-item" data-value="beaute-livraison">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Beauté Livraison</span>
+                    </div>
+                </div>
+                <div class="service-item" data-value="shopping-livraison">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Shopping Livraison</span>
+                    </div>
+                </div>
+                <div class="service-item" data-value="nettoyage">
+                    <div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 hover:border-yellow-400 transition-all cursor-pointer">
+                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Nettoyage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceDropdownButton = document.getElementById('serviceDropdownButton');
+            const serviceDropdown = document.getElementById('serviceDropdown');
+            const serviceItems = document.querySelectorAll('.service-item');
+            const gpsButton = document.getElementById('gpsButton');
+            const addressInput = document.getElementById('addressInput');
+            const submitButton = document.getElementById('submitButton');
+            
+            // Toggle service dropdown
+            serviceDropdownButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const rect = serviceDropdownButton.getBoundingClientRect();
+                serviceDropdown.style.left = `${rect.left}px`;
+                serviceDropdown.style.top = `${rect.bottom + window.scrollY}px`;
+                serviceDropdown.style.width = `${rect.width}px`;
+                serviceDropdown.classList.toggle('hidden');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!serviceDropdownButton.contains(event.target) && !serviceDropdown.contains(event.target)) {
+                    serviceDropdown.classList.add('hidden');
+                }
+            });
+            
+            // Select service item
+            serviceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const serviceName = this.querySelector('span').textContent;
+                    serviceDropdownButton.querySelector('span').textContent = serviceName;
+                    serviceDropdownButton.querySelector('span').classList.remove('text-gray-600');
+                    serviceDropdownButton.querySelector('span').classList.add('text-gray-800', 'font-medium');
+                    serviceDropdown.classList.add('hidden');
+                });
+            });
+            
+            // GPS location
+            gpsButton.addEventListener('click', function() {
+                if (navigator.geolocation) {
+                    gpsButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>`;
+                    
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) {
+                            const lat = position.coords.latitude;
+                            const lng = position.coords.longitude;
+                            
+                            // In a real app, you would use a geocoding API here
+                            addressInput.value = `Position actuelle (${lat.toFixed(4)}, ${lng.toFixed(4)})`;
+                            
+                            gpsButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>`;
+                            
+                            setTimeout(() => {
+                                gpsButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>`;
+                            }, 2000);
+                        },
+                        function(error) {
+                            console.error("Erreur de géolocalisation:", error);
+                            addressInput.value = "Impossible d'obtenir la localisation";
+                            
+                            gpsButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>`;
+                            
+                            setTimeout(() => {
+                                gpsButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>`;
+                            }, 2000);
+                        }
+                    );
+                } else {
+                    addressInput.value = "Géolocalisation non supportée par votre navigateur";
+                }
+            });
+            
+            // Submit action
+            submitButton.addEventListener('click', function() {
+                const service = serviceDropdownButton.querySelector('span').textContent;
+                const address = addressInput.value;
+                
+                if (service === "Sélectionnez un service") {
+                    alert("Veuillez sélectionner un service");
+                    return;
+                }
+                
+                if (!address) {
+                    alert("Veuillez entrer une adresse");
+                    return;
+                }
+                
+                alert(`Service: ${service}\nAdresse: ${address}\n\nRequête envoyée!`);
+            });
+        });
+    </script>
+</body>
+</html>

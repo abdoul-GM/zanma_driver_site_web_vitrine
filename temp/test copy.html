@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment ça marche - Zanma</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .zanma-blue { background-color: #1e40af; }
+        .text-zanma-blue { color: #1e40af; }
+        .border-zanma-blue { border-color: #1e40af; }
+        .hover-zanma-blue:hover { background-color: #1e40af; color: white; }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .decision-branch {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .decision-branch:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .branch-connector {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, #1e40af, transparent);
+            transform: translateX(-50%);
+        }
+        
+        .main-connector {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .main-connector::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #1e40af, transparent);
+            transform: translateY(-50%);
+        }
+        
+        .step-badge {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+        }
+        
+        .role-card {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+        
+        .role-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            padding: 2px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: inherit;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- En-tête -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comment ça marche</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Rejoignez Zanma en quelques étapes simples et choisissez votre parcours
+                </p>
+            </div>
+
+            <!-- Étapes initiales communes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Étape 1 -->
+                <div class="text-center fade-in">
+                    <div class="mx-auto mb-4 step-badge rounded-full w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-download text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">1. Téléchargez l'application</h3>
+                    <p class="text-gray-600 text-lg">Disponible gratuitement sur App Store et Google Play</p>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="text-center fade-in" style="animation-delay: 0.1s;">
+                    <div class="mx-auto mb-4 step-badge rounded-full w-20 h-20 flex items-center justify-center">
+                        <i class="fas fa-user-plus text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">2. Créez votre compte</h3>
+                    <p class="text-gray-600 text-lg">Inscription rapide avec votre email ou numéro de téléphone</p>
+                </div>
+            </div>
+
+            <!-- Connecteur principal -->
+            <div class="main-connector fade-in" style="animation-delay: 0.2s;">
+                <div class="text-center py-8">
+                    <h3 class="text-2xl font-bold text-zanma-blue mb-4">
+                        <i class="fas fa-route mr-3"></i>
+                        Choisissez votre parcours
+                    </h3>
+                    <p class="text-gray-600 text-lg">Sélectionnez le rôle qui vous correspond le mieux</p>
+                </div>
+            </div>
+
+            <!-- Les 4 chemins possibles -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Client -->
+                <div class="decision-branch fade-in" style="animation-delay: 0.3s;">
+                    <div class="branch-connector"></div>
+                    <div class="role-card rounded-xl p-6 text-center h-full">
+                        <div class="mx-auto mb-4 bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Client</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                            <li>• Réservez vos trajets</li>
+                            <li>• Commandez vos repas</li>
+                            <li>• Recevez vos colis</li>
+                            <li>• Payez en toute sécurité</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">
+                                Commencer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chauffeur -->
+                <div class="decision-branch fade-in" style="animation-delay: 0.4s;">
+                    <div class="branch-connector"></div>
+                    <div class="role-card rounded-xl p-6 text-center h-full">
+                        <div class="mx-auto mb-4 bg-green-500 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-car text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Chauffeur</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                            <li>• Générez des revenus</li>
+                            <li>• Horaires flexibles</li>
+                            <li>• Zone de travail libre</li>
+                            <li>• Support 24/7</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button class="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">
+                                Postuler
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livreur -->
+                <div class="decision-branch fade-in" style="animation-delay: 0.5s;">
+                    <div class="branch-connector"></div>
+                    <div class="role-card rounded-xl p-6 text-center h-full">
+                        <div class="mx-auto mb-4 bg-orange-500 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-motorcycle text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Livreur</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                            <li>• Livraisons rapides</li>
+                            <li>• Pourboires inclus</li>
+                            <li>• Planning personnalisé</li>
+                            <li>• Équipement fourni</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button class="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors">
+                                Rejoindre
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurateur -->
+                <div class="decision-branch fade-in" style="animation-delay: 0.6s;">
+                    <div class="branch-connector"></div>
+                    <div class="role-card rounded-xl p-6 text-center h-full">
+                        <div class="mx-auto mb-4 bg-purple-500 rounded-full w-16 h-16 flex items-center justify-center">
+                            <i class="fas fa-utensils text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Restaurateur</h4>
+                        <ul class="text-gray-600 text-sm space-y-2 mb-4">
+                            <li>• Augmentez vos ventes</li>
+                            <li>• Gestion des commandes</li>
+                            <li>• Tableau de bord détaillé</li>
+                            <li>• Commission attractive</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button class="w-full bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-600 transition-colors">
+                                Partenaire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section finale -->
+            <div class="text-center mt-16 fade-in" style="animation-delay: 0.7s;">
+                <div class="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
+                    <i class="fas fa-star text-yellow-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Une plateforme, plusieurs opportunités</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Que vous soyez utilisateur ou partenaire, Zanma vous accompagne dans votre quotidien avec des solutions simples et efficaces.
+                    </p>
+                    <button class="bg-zanma-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors text-lg">
+                        Télécharger maintenant
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Effet hover sur les cartes de rôles
+        document.querySelectorAll('.decision-branch').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

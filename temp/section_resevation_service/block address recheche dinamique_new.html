@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sélection de Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="block address recheche dinamique_new.css">
+</head>
+
+<body>
+
+    <section class="trouver_mon_service main-background flex items-center justify-center p-4 w-full min-h-[35rem]">
+        <!-- Floating particles -->
+        <div class="particles" id="particles-container">
+            <div class="particle" style="left: 10%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; width: 2px; height: 2px; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; width: 3px; height: 3px; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; width: 5px; height: 5px; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; width: 2px; height: 2px; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; width: 4px; height: 4px; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; width: 3px; height: 3px; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; width: 2px; height: 2px; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; width: 4px; height: 4px; animation-delay: 16s;"></div>
+        </div>
+
+        <div class="w-full">
+            <div class="glass-card rounded-2xl p-8 space-y-6">
+                <h1 class="text-3xl font-bold gradient-text mb-8 text-center">Réserver un service</h1>
+
+                <!-- Service Dropdown -->
+                <div class="relative">
+                    <button id="serviceDropdownButton"
+                        class="w-full flex justify-between items-center p-4 input-glass rounded-xl hover:bg-white/20 focus:outline-none transition-all duration-300">
+                        <span class="text-white/80">Sélectionnez un service</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white/60" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <div id="serviceDropdown"
+                        class="hidden absolute z-10 mt-3 w-full glass-dropdown rounded-xl border border-white/20 divide-y divide-gray-100/20">
+                        <div class="p-6">
+                            <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">Principaux
+                                services</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="service-item" data-value="taxi">
+                                    <div
+                                        class="service-card p-4 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        <div
+                                            class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-700">Taxi</span>
+                                    </div>
+                                </div>
+                                <div class="service-item" data-value="commande-repas">
+                                    <div
+                                        class="service-card p-4 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        <div
+                                            class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-700">commande de repas</span>
+                                    </div>
+                                </div>
+                                <div class="service-item" data-value="livraison-colis">
+                                    <div
+                                        class="service-card p-4 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        <div
+                                            class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-700">Livraison de colis</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-wider mb-4">Plus de
+                                services</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="service-item" data-value="achats-livraison">
+                                    <div
+                                        class="service-card p-4 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        <div
+                                            class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-700">Achats et Livraison</span>
+                                    </div>
+                                </div>
+                                <div class="service-item" data-value="achats-pharmacie">
+                                    <div
+                                        class="service-card p-4 rounded-xl cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-300">
+                                        <div
+                                            class="icon-bg w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm font-medium text-gray-700">Pharmacie</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Search with Suggestions -->
+                <div class="relative w-full max-w-full overflow-hidden">
+                    <div class="flex items-center input-glass rounded-xl transition-all duration-300 w-full">
+                        <div class="pl-4 pr-2 text-white/60">
+                            <span class="text-xl">📍</span>
+                        </div>
+                        <input type="text" id="addressInput" placeholder="Rechercher une adresse..."
+                            class="flex-1 min-w-0 py-4 px-2 bg-transparent focus:outline-none text-white placeholder-white/60"
+                            autocomplete="off">
+                        <button id="gpsButton"
+                            class="text-2xl p-3 text-white/60 hover:text-red-600 transition-colors gps-icon">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </button>
+                    </div>
+
+                    <!-- Address Suggestions Dropdown -->
+                    <div id="addressSuggestions"
+                        class="hidden absolute z-10 mt-2 w-full address-suggestions rounded-xl border border-white/20 bg-white text-black max-h-60 overflow-y-auto">
+                    </div>
+
+                    <!-- Hidden fields for coordinates -->
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+                </div>
+
+
+                <!-- Submit Button -->
+                <div class="flex justify-center pt-4">
+                    <button id="submitButton"
+                        class="submit-button md:w-1/3 flex items-center justify-center px-8 py-4 rounded-xl text-gray-800 font-semibold transition-all duration-300">
+                        <span class="mr-3">Valider</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Container -->
+    <div id="modalContainer" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" id="modalBackdrop"></div>
+            <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full mx-auto p-6 transform transition-all"
+                id="modalContent">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="fixed top-4 right-4 z-50 space-y-2 max-w-sm w-full"></div>
+    <script src="block address recheche dinamique_new.js"></script>
+
+</body>
+
+</html>
