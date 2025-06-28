@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZANMA DRIVER - Devenir Livreur</title>
+    <script src="../assets/js/tailwindcss.3.4.16.js"></script>
+    <script src="../assets/js/tailwind.config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #11286b, #ffe435);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #11286b 0%, #1e3a8a 50%, #3b82f6 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #11286b;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-gray-800 custom-scrollbar">
+    <!-- Hero Section with Floating Elements -->
+    <section class="relative min-h-screen hero-bg text-white overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-zanma-yellow opacity-20 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-white opacity-10 rounded-full animate-float"
+                style="animation-delay: -2s;"></div>
+            <div class="absolute bottom-32 left-1/4 w-40 h-40 bg-blue-400 opacity-15 rounded-full animate-float"
+                style="animation-delay: -4s;"></div>
+            <div class="absolute bottom-20 right-1/3 w-20 h-20 bg-zanma-yellow opacity-25 rounded-full animate-float"
+                style="animation-delay: -1s;"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-40">
+            <div class="text-center">
+                <!-- Logo -->
+                <div class="mb-8 animate-fade-in-up">
+                    <h1 class="text-6xl md:text-8xl font-black mb-4">
+                        <span class="text-white">ZANMA</span>
+                        <span class="text-zanma-yellow animate-glow">DRIVER</span>
+                    </h1>
+                    <div class="w-32 h-1 bg-zanma-yellow mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Main Title -->
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 animate-slide-up">
+                    Devenez <span class="gradient-text">Livreur</span>
+                </h2>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl lg:text-3xl max-w-4xl mx-auto mb-12 opacity-90 animate-fade-in-up"
+                    style="animation-delay: 0.3s;">
+                    Gagnez jusqu'à <span class="text-zanma-yellow font-bold">25 000 FCFA</span> par semaine en livrant
+                    avec flexibilité totale
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-6 animate-fade-in-up"
+                    style="animation-delay: 0.6s;">
+                    <button
+                        class="group bg-zanma-yellow hover:bg-yellow-400 text-gray-900 px-10 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+                        <span class="flex items-center justify-center">
+                            <i class="fas fa-rocket mr-3 group-hover:animate-bounce"></i>
+                            Commencer maintenant
+                        </span>
+                    </button>
+                    <button
+                        class="glass-effect text-white px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-white hover:bg-opacity-20">
+                        <span class="flex items-center justify-center">
+                            <i class="fas fa-play mr-3"></i>
+                            Voir la vidéo
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Floating Stats repositionnées en statique -->
+            <div class="mt-20 w-full max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="glass-effect p-6 rounded-2xl animate-float">
+                        <div class="text-3xl font-bold text-zanma-yellow">500+</div>
+                        <div class="text-sm opacity-80">Livreurs actifs</div>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl animate-float" style="animation-delay: -1s;">
+                        <div class="text-3xl font-bold text-zanma-yellow">24/7</div>
+                        <div class="text-sm opacity-80">Support client</div>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl animate-float" style="animation-delay: -2s;">
+                        <div class="text-3xl font-bold text-zanma-yellow">98%</div>
+                        <div class="text-sm opacity-80">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Pourquoi choisir <span class="gradient-text">ZANMA DRIVER</span> ?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez les avantages exclusifs qui font de nous le meilleur choix pour les livreurs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="group card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                    <div
+                        class="bg-gradient-to-r from-zanma-blue to-blue-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-coins text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Revenus élevés</h3>
+                    <p class="text-gray-600 text-lg mb-6">Gagnez jusqu'à 25 000 FCFA par semaine avec nos tarifs
+                        compétitifs et nos bonus fréquents.</p>
+                    <div class="flex items-center text-zanma-blue font-semibold">
+                        <span>En savoir plus</span>
+                        <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="group card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                    <div
+                        class="bg-gradient-to-r from-green-500 to-emerald-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Flexibilité maximale</h3>
+                    <p class="text-gray-600 text-lg mb-6">Travaillez quand vous voulez, où vous voulez. Vous êtes votre
+                        propre patron.</p>
+                    <div class="flex items-center text-zanma-blue font-semibold">
+                        <span>En savoir plus</span>
+                        <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="group card-hover bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                    <div
+                        class="bg-gradient-to-r from-purple-500 to-pink-600 text-white w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Sécurité garantie</h3>
+                    <p class="text-gray-600 text-lg mb-6">Assurance complète, support 24/7 et système de géolocalisation
+                        pour votre sécurité.</p>
+                    <div class="flex items-center text-zanma-blue font-semibold">
+                        <span>En savoir plus</span>
+                        <i
+                            class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements Section -->
+    <section class="py-24 bg-zanma-blue text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-y-12">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-bold mb-8">
+                        Conditions <span class="text-zanma-yellow">simples</span>
+                    </h2>
+                    <p class="text-xl mb-12 opacity-90">
+                        Rejoignez notre équipe en quelques étapes. Nos critères sont accessibles et équitables.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center group">
+                            <div
+                                class="bg-zanma-yellow text-zanma-blue w-12 h-12 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-check font-bold"></i>
+                            </div>
+                            <span class="text-xl">Avoir au moins 18 ans</span>
+                        </div>
+                        <div class="flex items-center group">
+                            <div
+                                class="bg-zanma-yellow text-zanma-blue w-12 h-12 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-check font-bold"></i>
+                            </div>
+                            <span class="text-xl">Posséder un véhicule (moto/vélo/voiture) <br
+                                    class="block md:hidden" /> ou en obtenir un via ZANMA DRIVER</span>
+                        </div>
+                        <div class="flex items-center group">
+                            <div
+                                class="bg-zanma-yellow text-zanma-blue w-12 h-12 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-check font-bold"></i>
+                            </div>
+                            <span class="text-xl">Smartphone avec 4G</span>
+                        </div>
+                        <div class="flex items-center group">
+                            <div
+                                class="bg-zanma-yellow text-zanma-blue w-12 h-12 rounded-full flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-check font-bold"></i>
+                            </div>
+                            <span class="text-xl">Être motivé et ponctuel</span>
+                        </div>
+                    </div>
+
+
+                    <button
+                        class="mt-12 bg-zanma-yellow hover:bg-yellow-400 text-zanma-blue px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105">
+                        Je postule maintenant
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-white bg-opacity-10 rounded-3xl p-8 backdrop-blur-sm">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Livreur ZANMA DRIVER" class="w-full rounded-2xl shadow-2xl">
+                        <!-- Floating elements -->
+                        <div
+                            class="absolute -top-6 -right-6 bg-zanma-yellow text-zanma-blue p-4 rounded-2xl animate-bounce">
+                            <i class="fas fa-motorcycle text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white text-zanma-blue p-4 rounded-2xl animate-pulse">
+                            <i class="fas fa-dollar-sign text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Comment <span class="gradient-text">démarrer</span> ?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Un processus simple et rapide en 4 étapes pour commencer à livrer dès aujourd'hui
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Connection Line -->
+                <div
+                    class="absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-1 bg-gradient-to-r from-zanma-blue via-zanma-yellow to-zanma-blue hidden lg:block">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative text-center group">
+                        <div
+                            class="bg-zanma-blue text-white w-32 h-32 rounded-full flex items-center justify-center mb-8 mx-auto shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zanma-blue/50">
+                            <span class="text-4xl font-bold">1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Inscription</h3>
+                        <p class="text-gray-600 text-lg">Créez votre compte en 3 minutes avec vos informations
+                            personnelles</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative text-center group">
+                        <div
+                            class="bg-green-500 text-white w-32 h-32 rounded-full flex items-center justify-center mb-8 mx-auto shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-green-500/50">
+                            <span class="text-4xl font-bold">2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Vérification</h3>
+                        <p class="text-gray-600 text-lg">Téléchargez vos documents (CNI, permis) pour validation express
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative text-center group">
+                        <div
+                            class="bg-purple-500 text-white w-32 h-32 rounded-full flex items-center justify-center mb-8 mx-auto shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-purple-500/50">
+                            <span class="text-4xl font-bold">3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Formation</h3>
+                        <p class="text-gray-600 text-lg">Formation en ligne interactive de 30 minutes sur notre
+                            plateforme</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative text-center group">
+                        <div
+                            class="bg-zanma-yellow text-zanma-blue w-32 h-32 rounded-full flex items-center justify-center mb-8 mx-auto shadow-2xl group-hover:scale-110 transition-all duration-300 group-hover:shadow-zanma-yellow/50">
+                            <span class="text-4xl font-bold">4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Go Live!</h3>
+                        <p class="text-gray-600 text-lg">Activez l'application et commencez à recevoir vos premières
+                            commandes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold mb-6">
+                    Ils ont <span class="text-zanma-yellow">réussi</span>
+                </h2>
+                <p class="text-xl opacity-80 max-w-3xl mx-auto">
+                    Découvrez les témoignages de nos livreurs partenaires qui ont transformé leur quotidien
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div
+                    class="glass-effect p-8 rounded-3xl relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-zanma-yellow opacity-10 rounded-full transform translate-x-16 -translate-y-16">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="Amadou" class="w-16 h-16 rounded-full object-cover mr-4 ring-4 ring-zanma-yellow">
+                            <div>
+                                <h4 class="font-bold text-lg">Amadou K.</h4>
+                                <div class="flex text-zanma-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg italic mb-4">"En 6 mois, j'ai gagné près de 800 000 FCFA. ZANMA DRIVER m’a
+                            permis de compléter mes revenus !"</p>
+                        <div class="text-zanma-yellow font-semibold">💰 30 000 FCFA/semaine</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div
+                    class="glass-effect p-8 rounded-3xl relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-blue-400 opacity-10 rounded-full transform translate-x-16 -translate-y-16">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b332c142?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="Fatou" class="w-16 h-16 rounded-full object-cover mr-4 ring-4 ring-zanma-yellow">
+                            <div>
+                                <h4 class="font-bold text-lg">Fatou S.</h4>
+                                <div class="flex text-zanma-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg italic mb-4">"La flexibilité parfaite pour concilier mes études et mes
+                            revenus. Je recommande à 100%!"</p>
+                        <div class="text-zanma-yellow font-semibold">🎓 Étudiante - 35 000 FCFA/semaine</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div
+                    class="glass-effect p-8 rounded-3xl relative overflow-hidden group hover:scale-105 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-green-400 opacity-10 rounded-full transform translate-x-16 -translate-y-16">
+                    </div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                                alt="Ibrahim" class="w-16 h-16 rounded-full object-cover mr-4 ring-4 ring-zanma-yellow">
+                            <div>
+                                <h4 class="font-bold text-lg">Ibrahim T.</h4>
+                                <div class="flex text-zanma-yellow">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg italic mb-4">"Support client exceptionnel et application très intuitive. Je me
+                            sens en sécurité à chaque livraison."</p>
+                        <div class="text-zanma-yellow font-semibold">👍 Client satisfait</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Questions <span class="gradient-text">fréquentes</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Trouvez rapidement les réponses à vos questions
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <button
+                        class="faq-toggle w-full p-8 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900">Combien puis-je gagner comme livreur ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 text-lg">Les revenus varient selon votre disponibilité et votre zone de
+                            livraison. En moyenne, nos livreurs gagnent entre 20 000 et 40 000 FCFA par semaine. Les
+                            week-ends et heures de pointe sont particulièrement rentables avec des bonus jusqu'à +50%.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <button
+                        class="faq-toggle w-full p-8 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900">Quel type de véhicule puis-je utiliser ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 text-lg">Vous pouvez livrer avec une moto une voiture ou même
+                            un scooter électrique. L’essentiel est que votre véhicule soit en bon état et conforme aux
+                            normes de circulation.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <button
+                        class="faq-toggle w-full p-8 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900">Puis-je obtenir un véhicule ZANMA DRIVER&nbsp;?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 text-lg">
+                            Oui, ZANMA DRIVER propose un programme de mise à disposition de véhicules pour les livreurs
+                            qui n'en possèdent pas.
+                            Sous conditions, vous pouvez conduire une moto ou une voiture fourni par l’entreprise, avec un
+                            contrat flexible et un loyer abordable.
+                            Contactez notre équipe pour connaître les modalités et démarrer rapidement !
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- FAQ 3 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <button
+                        class="faq-toggle w-full p-8 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900">Quels documents dois-je fournir ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 text-lg">Une pièce d’identité valide (CNI ou passeport), un permis de
+                            conduire si vous utilisez une moto ou une voiture, et parfois une assurance pour votre
+                            véhicule.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                    <button
+                        class="faq-toggle w-full p-8 text-left flex justify-between items-center hover:bg-gray-100 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-gray-900">Y a-t-il des horaires imposés ?</h3>
+                        <i class="fas fa-chevron-down text-zanma-blue text-xl transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-8 pb-8">
+                        <p class="text-gray-600 text-lg">Non ! Vous choisissez vos horaires librement. Vous pouvez
+                            livrer à temps plein ou seulement quelques heures par semaine, selon vos disponibilités.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple FAQ toggle script -->
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('hidden');
+                button.querySelector('i').classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+
+</html>

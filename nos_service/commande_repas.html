@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande de Repas - Zanma</title>
+    <script src="../assets/js/tailwindcss.3.4.16.js"></script>
+    <script src="../assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-feature {
+            transition: all 0.3s ease;
+        }
+
+        .service-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .food-card {
+            background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+        }
+
+        .restaurant-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        .delivery-steps {
+            position: relative;
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 4rem);
+            background: linear-gradient(to bottom, #EF4444, #DC2626);
+        }
+
+        .pulse-food {
+            animation: pulse-food 2s infinite;
+        }
+
+        @keyframes pulse-food {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Floating Back Button -->
+    <button onclick="goBack()"
+        class="floating-back-btn bg-white/90 backdrop-blur-md text-gray-800 p-4 rounded-full shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+        <i class="fas fa-arrow-left text-lg group-hover:text-red-500"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-red-500 via-red-600 to-red-800 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"></div>
+            <div class="absolute top-40 right-32 w-20 h-20 bg-white rounded-full"></div>
+            <div class="absolute bottom-32 left-32 w-28 h-28 bg-white rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-24 h-24 bg-white rounded-full"></div>
+        </div>
+
+        <div class="relative container mx-auto px-6 py-20 flex items-center min-h-screen">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                <!-- Content -->
+                <div class="text-white space-y-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-utensils text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-semibold opacity-90">Service Livraison</span>
+                        </div>
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                            Commande de <span class="text-zanma-yellow">Repas</span>
+                        </h1>
+                        <p class="text-xl md:text-1xl opacity-90 leading-relaxed">
+                            Vos restaurants préférés livrés en un clic, directement chez vous ou au bureau
+                        </p>
+                    </div>
+
+                    <!-- Features Highlights -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-clock text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Livraison rapide</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-fire text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Toujours chaud</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-star text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Restaurants top</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-motorcycle text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Suivi en temps réel</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="bg-zanma-yellow text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+                            <i class="fas fa-mobile-alt mr-3"></i>Commander maintenant
+                        </button>
+                        <button
+                            class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
+                            <i class="fas fa-store mr-3"></i>Voir les restaurants
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Food Illustration -->
+                <div class="relative">
+                    <div class="floating-element">
+                        <div class="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
+                            <div class="text-center">
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="pulse-food bg-white rounded-2xl p-4 shadow-lg">
+                                        <div class="text-4xl mb-2">🍕</div>
+                                        <p class="text-sm font-semibold text-gray-800">Pizza</p>
+                                    </div>
+                                    <div class="pulse-food bg-white rounded-2xl p-4 shadow-lg"
+                                        style="animation-delay: 0.5s;">
+                                        <div class="text-4xl mb-2">🍔</div>
+                                        <p class="text-sm font-semibold text-gray-800">Burger</p>
+                                    </div>
+                                    <div class="pulse-food bg-white rounded-2xl p-4 shadow-lg"
+                                        style="animation-delay: 1s;">
+                                        <div class="text-4xl mb-2">🍜</div>
+                                        <p class="text-sm font-semibold text-gray-800">Nouilles</p>
+                                    </div>
+                                    <div class="pulse-food bg-white rounded-2xl p-4 shadow-lg"
+                                        style="animation-delay: 1.5s;">
+                                        <div class="text-4xl mb-2">🥗</div>
+                                        <p class="text-sm font-semibold text-gray-800">Salade</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white/20 rounded-xl p-4">
+                                    <div class="flex items-center justify-between text-white mb-2">
+                                        <span>Temps de livraison:</span>
+                                        <span class="font-bold text-zanma-yellow">15-30 min</span>
+                                    </div>
+                                    <div class="w-full bg-white/20 rounded-full h-2">
+                                        <div class="bg-zanma-yellow h-2 rounded-full" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Comment ça marche ?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Commandez vos repas préférés en quelques clics seulement
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="delivery-steps grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                    <!-- Step 1 -->
+                    <div class="text-center relative z-10">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
+                            <i class="fas fa-mobile-alt text-3xl text-white"></i>
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 bg-zanma-yellow rounded-full flex items-center justify-center text-gray-800 font-bold text-sm">
+                                1</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Choisissez</h3>
+                        <p class="text-gray-600">Parcourez nos restaurants partenaires et sélectionnez vos plats favoris
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center relative z-10">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
+                            <i class="fas fa-shopping-cart text-3xl text-white"></i>
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 bg-zanma-yellow rounded-full flex items-center justify-center text-gray-800 font-bold text-sm">
+                                2</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Commandez</h3>
+                        <p class="text-gray-600">Personnalisez votre commande et procédez au paiement sécurisé</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center relative z-10">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
+                            <i class="fas fa-utensils text-3xl text-white"></i>
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 bg-zanma-yellow rounded-full flex items-center justify-center text-gray-800 font-bold text-sm">
+                                3</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Préparation</h3>
+                        <p class="text-gray-600">Le restaurant prépare soigneusement votre commande avec des ingrédients
+                            frais</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="text-center relative z-10">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
+                            <i class="fas fa-motorcycle text-3xl text-white"></i>
+                            <div
+                                class="absolute -top-2 -right-2 w-8 h-8 bg-zanma-yellow rounded-full flex items-center justify-center text-gray-800 font-bold text-sm">
+                                4</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Livraison</h3>
+                        <p class="text-gray-600">Notre livreur vous apporte votre repas chaud directement à votre porte
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Partners Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Nos restaurants partenaires
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Découvrez une sélection variée de restaurants de qualité
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Restaurant 1 -->
+                <div
+                    class="restaurant-card bg-white/80 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl border border-white/20">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl">🍕</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Pizza Palace</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i>
+                                <span class="font-semibold">4.8</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Pizzas italiennes authentiques, pâtes fraîches</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">15-25 min</span>
+                            <span class="text-sm font-semibold text-green-600">Frais de livraison: 500 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 2 -->
+                <div
+                    class="restaurant-card bg-white/80 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl border border-white/20">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <div class="text-6xl">🍔</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Burger King</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i>
+                                <span class="font-semibold">4.6</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Burgers gourmets, frites maison, milkshakes</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">10-20 min</span>
+                            <span class="text-sm font-semibold text-green-600">Frais de livraison: 400 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 3 -->
+                <div
+                    class="restaurant-card bg-white/80 backdrop-blur-md rounded-3xl overflow-hidden shadow-xl border border-white/20">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-6xl">🥗</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-800">Green Garden</h3>
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i>
+                                <span class="font-semibold">4.9</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Salades fraîches, bowls healthy, jus naturels</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">12-18 min</span>
+                            <span class="text-sm font-semibold text-green-600">Frais de livraison: 300 FCFA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Pourquoi choisir notre service ?
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-clock text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Livraison rapide</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Recevez vos repas en 15 à 30 minutes maximum, toujours chauds et savoureux.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Qualité garantie</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tous nos restaurants partenaires sont sélectionnés pour leur qualité et leur hygiène
+                        irréprochables.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-map-marker-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Suivi en temps réel</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Suivez votre commande en temps réel, de la préparation jusqu'à la livraison à votre porte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Nos chiffres parlent d'eux-mêmes
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-red-500 mb-2">1000+</div>
+                    <p class="text-gray-600 font-medium">Commandes par jour</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-red-500 mb-2">150+</div>
+                    <p class="text-gray-600 font-medium">Restaurants partenaires</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-red-500 mb-2">20min</div>
+                    <p class="text-gray-600 font-medium">Temps moyen de livraison</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-red-500 mb-2">4.8⭐</div>
+                    <p class="text-gray-600 font-medium">Note moyenne</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="mx-auto">
+                <div class="food-card rounded-3xl p-12 text-white text-center shadow-2xl">
+                    <div
+                        class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-utensils text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Commandez maintenant !
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                        Téléchargez notre application mobile ou appelez-nous pour savourer vos plats préférés
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg mx-auto mb-8">
+                        <button
+                            class="bg-white/90 backdrop-blur-sm text-gray-800 py-4 px-6 rounded-2xl font-bold hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-google-play mr-3 text-xl"></i>Google Play
+                        </button>
+                        <button
+                            class="bg-white/90 backdrop-blur-sm text-gray-800 py-4 px-6 rounded-2xl font-bold hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-apple mr-3 text-xl"></i>App Store
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-center space-x-4 text-lg">
+                        <span>Ou appelez-nous au</span>
+                        <a href="tel:+22612345678"
+                            class="bg-zanma-yellow text-gray-800 px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition-all duration-300">
+                            <i class="fas fa-phone mr-2"></i>+226 12 34 56 78
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate stats numbers
+            const statsElements = document.querySelectorAll('.stats-card .text-4xl');
+            statsElements.forEach(el => {
+                const finalValue = el.textContent;
+                let current = 0;
+                const increment = () => {
+                    if (current < parseInt(finalValue)) {
+                        current += Math.ceil(parseInt(finalValue) / 50);
+                        if (current > parseInt(finalValue)) current = parseInt(finalValue);
+                        el.textContent = current + (finalValue.includes('⭐') ? '⭐' : finalValue.includes('min') ? 'min' : '+');
+                        setTimeout(increment, 20);
+                    }
+                };
+
+                // Start animation when element is visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            increment();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                observer.observe(el.parentElement);
+            });
+
+            // Add floating food emojis
+            createFloatingEmojis();
+        });
+
+        function createFloatingEmojis() {
+            const emojis = ['🍕', '🍔', '🍟', '🥗', '🍜', '🌮', '🍰', '🥤'];
+
+            setInterval(() => {
+                const emoji = document.createElement('div');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.className = 'fixed text-2xl pointer-events-none z-0 opacity-20';
+                emoji.style.left = Math.random() * 100 + '%';
+                emoji.style.bottom = '-50px';
+                emoji.style.animation = `float ${3 + Math.random() * 2}s linear forwards`;
+
+                document.body.appendChild(emoji);
+
+                setTimeout(() => {
+                    emoji.remove();
+                }, 5000);
+            }, 2000);
+        }
+    </script>
+    <script src="../assets/js/nos_service_composant_partage.js"></script>
+</body>
+
+</html>

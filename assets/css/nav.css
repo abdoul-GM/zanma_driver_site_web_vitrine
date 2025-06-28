@@ -55,6 +55,10 @@
     .ligne_nav_1 {
         margin-bottom: 3px;
     }
+
+    :root {
+        --navbar-height: var(--navbar-height-mobile);
+    }
 }
 
 @media (min-width: 768px) {
@@ -112,6 +116,15 @@
     font-weight: 600;
     transition: all 0.3s ease-in-out;
 }
+
+.dark .nav_bare_menu li a.active {
+    border: var(--primary-yellow) solid 2px;
+    border-bottom: 4px solid var(--primary-blue);
+    color: var(--primary-yellow);
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
 
 .premier_section_after_navbar {
     transition: margin-top 0.3s ease-in-out;

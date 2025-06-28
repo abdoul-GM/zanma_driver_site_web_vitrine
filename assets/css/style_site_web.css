@@ -7,7 +7,7 @@
 @import url('loader.css');
 @import url('nav.css');
 @import url('block_address_recheche_dinamique_localisation.css');
-
+@import url('mega_menu_style.css');
 body {
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -32,15 +32,15 @@ section {
 }
 
 .slide-1 {
-    background-image: var(--gradient-sider-bg), url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+    background-image: var(--gradient-sider-bg), url('/assets/img/unsplash/slide_1.png');
 }
 
 .slide-2 {
-    background-image: var(--gradient-sider-bg), url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-image: var(--gradient-sider-bg), url('/assets/img/unsplash/slide_2.png');
 }
 
 .slide-3 {
-    background-image: var(--gradient-sider-bg), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-image: var(--gradient-sider-bg), url('/assets/img/unsplash/slide_3.png');
 }
 
 .fade-in {
@@ -165,6 +165,10 @@ section {
     mask-composite: xor;
     -webkit-mask-composite: xor;
     pointer-events: none;
+}
+
+.dark .role-card {
+  background: #1f2937;
 }
 
 .arrow-down {

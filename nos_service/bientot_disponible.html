@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Bientôt Disponible - Zanma</title>
+    <script src="../assets/js/tailwindcss.3.4.16.js"></script>
+    <script src="../assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+
+        .bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes bounce-slow {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .notification-form {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            backdrop-filter: blur(20px);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #3B82F6, #1D4ED8, #3B82F6);
+            background-size: 200% 100%;
+            animation: progress-animation 3s linear infinite;
+        }
+
+        @keyframes progress-animation {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .orbit {
+            animation: orbit 8s linear infinite;
+        }
+
+        @keyframes orbit {
+            from {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 min-h-screen overflow-x-hidden">
+    <!-- Floating Back Button -->
+    <button onclick="goBack()"
+        class="floating-back-btn bg-zinc-200/90 backdrop-blur-md text-gray-800 p-4 rounded-3xl shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+        <span class="group-hover:text-zanma-blue">
+            <i class="fas fa-arrow-left text-lg"></i> Retour
+        </span>
+    </button>
+
+    <!-- Background Decorative Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-zanma-blue/10 rounded-full blur-xl"></div>
+        <div class="absolute top-40 right-20 w-48 h-48 bg-zanma-yellow/20 rounded-full blur-2xl"></div>
+        <div class="absolute bottom-32 left-32 w-40 h-40 bg-purple-300/15 rounded-full blur-xl"></div>
+        <div class="absolute bottom-20 right-32 w-36 h-36 bg-pink-300/15 rounded-full blur-xl"></div>
+    </div>
+
+    <div class="relative min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+
+            <!-- Main Icon with Animation -->
+            <div class="relative">
+                <div class="floating-element">
+                    <div class="relative inline-block">
+                        <!-- Pulse rings -->
+                        <div class="absolute inset-0 rounded-full bg-zanma-blue/20 pulse-ring"></div>
+                        <div class="absolute inset-0 rounded-full bg-zanma-blue/10 pulse-ring"
+                            style="animation-delay: 0.5s;"></div>
+
+                        <!-- Main icon -->
+                        <div
+                            class="w-32 h-32 bg-gradient-to-br from-zanma-blue to-blue-700 rounded-full flex items-center justify-center shadow-2xl relative z-10">
+                            <i class="fas fa-rocket text-5xl text-white"></i>
+                        </div>
+
+                        <!-- Orbiting elements -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="orbit">
+                                <div class="w-4 h-4 bg-zanma-yellow rounded-full shadow-lg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-5xl md:text-7xl font-bold gradient-text leading-tight">
+                        Bientôt Disponible
+                    </h1>
+                    <div class="bounce-slow inline-block">
+                        <span class="text-6xl">🚀</span>
+                    </div>
+                </div>
+
+                <p class="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Nous travaillons dur pour vous offrir ce nouveau service.
+                    <span class="font-semibold text-zanma-blue">Restez connecté</span> pour être parmi les premiers à en
+                    profiter !
+                </p>
+
+                <!-- Progress Indicator -->
+                <div class="max-w-md mx-auto space-y-4">
+                    <div class="flex justify-between text-sm text-gray-600 font-medium">
+                        <span>Développement en cours</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div class="progress-bar h-full rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Features -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+                <div class="feature-card bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fa-solid fa-bolt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Rapide & Efficace</h3>
+                    <p class="text-gray-600 text-sm">Interface optimisée pour une expérience utilisateur fluide</p>
+                </div>
+
+                <div class="feature-card bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Sécurisé</h3>
+                    <p class="text-gray-600 text-sm">Protection avancée de vos données personnelles</p>
+                </div>
+
+                <div class="feature-card bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/20">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <i class="fas fa-heart text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Pensé pour vous</h3>
+                    <p class="text-gray-600 text-sm">Conçu selon vos besoins et retours d'expérience</p>
+                </div>
+            </div>
+
+            <!-- Notification Form -->
+            <div class="notification-form rounded-3xl p-8 shadow-2xl border border-white/30 mx-auto">
+                <div class="space-y-6">
+                    <div class="text-center space-y-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-zanma-blue to-blue-700 rounded-2xl flex items-center justify-center mx-auto shadow-lg">
+                            <i class="fas fa-bell text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Soyez notifié du lancement</h3>
+                        <p class="text-gray-600">Laissez-nous votre email pour recevoir une notification dès que le
+                            service sera disponible</p>
+                    </div>
+
+                    <form class="space-y-4" onsubmit="handleNotification(event)">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Votre adresse email"
+                                class="flex-1 px-6 py-4 rounded-2xl border border-gray-200 focus:border-zanma-blue focus:ring-2 focus:ring-zanma-blue/20 outline-none transition-all duration-300 bg-white/80 backdrop-blur-sm"
+                                required>
+                            <button type="submit"
+                                class="bg-gradient-to-r from-zanma-blue to-blue-700 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-600 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 whitespace-nowrap">
+                                <i class="fas fa-paper-plane mr-2"></i>Me notifier
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">
+                            <i class="fas fa-lock mr-1"></i>
+                            Vos données sont protégées et ne seront jamais partagées
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social Media & Contact -->
+            <div class="space-y-6">
+                <p class="text-lg text-gray-600">
+                    Suivez-nous sur nos réseaux sociaux pour les dernières mises à jour
+                </p>
+
+                <div class="flex justify-center space-x-6">
+                    <a href="#"
+                        class="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 hover:text-zanma-blue hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <i class="fab fa-facebook-f text-lg"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 hover:text-zanma-blue hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <i class="fab fa-twitter text-lg"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 hover:text-zanma-blue hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="#"
+                        class="w-12 h-12 bg-white/80 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-600 hover:text-zanma-blue hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-110">
+                        <i class="fab fa-linkedin-in text-lg"></i>
+                    </a>
+                </div>
+
+                <div class="text-center space-y-2">
+                    <p class="text-gray-600">Une question ? Contactez-nous</p>
+                    <a href="mailto:contact@zanma.bf"
+                        class="inline-flex items-center text-zanma-blue hover:text-blue-700 font-medium transition-colors duration-300">
+                        <i class="fas fa-envelope mr-2"></i>
+                        contact@zanma.bf
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal (Hidden by default) -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-md mx-4 shadow-2xl transform scale-95 transition-all duration-300">
+            <div class="text-center space-y-4">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
+                    <i class="fas fa-check text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800">Merci !</h3>
+                <p class="text-gray-600">Nous vous notifierons dès que le service sera disponible.</p>
+                <button onclick="closeModal()"
+                    class="bg-zanma-blue text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors duration-300">
+                    Parfait !
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleNotification(event) {
+            event.preventDefault();
+
+            // Simulate form submission
+            const email = event.target.querySelector('input[type="email"]').value;
+
+            // Show success modal
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('successModal').classList.add('flex');
+
+            // Reset form
+            event.target.reset();
+
+            // Here you would typically send the email to your backend
+            console.log('Email submitted:', email);
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            document.getElementById('successModal').classList.remove('flex');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('successModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Add some random floating particles
+        document.addEventListener('DOMContentLoaded', function () {
+            createFloatingParticles();
+        });
+
+        function createFloatingParticles() {
+            for (let i = 0; i < 6; i++) {
+                setTimeout(() => {
+                    const particle = document.createElement('div');
+                    particle.className = 'fixed w-2 h-2 bg-zanma-blue/20 rounded-full pointer-events-none z-0';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = '100%';
+                    particle.style.animation = `float ${3 + Math.random() * 2}s linear infinite`;
+
+                    document.body.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 5000);
+                }, i * 800);
+            }
+        }
+
+        // Repeat particle creation
+        setInterval(createFloatingParticles, 5000);
+    </script>
+
+    <script src="../assets/js/nos_service_composant_partage.js"></script>
+</body>
+
+</html>

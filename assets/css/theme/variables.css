@@ -8,6 +8,7 @@
     --secondary-gray-transparent: rgba(255, 255, 255, 0.3);
 
     --navbar-height: 131px;
+    --navbar-height-mobile: 80px;
 
     /* BG */
     --bg-light: #f1f1f1;

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Taxi - Zanma</title>
+    <script src="../assets/js/tailwindcss.3.4.16.js"></script>
+    <script src="../assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .floating-back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-feature {
+            transition: all 0.3s ease;
+        }
+
+        .service-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .booking-card {
+            background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+        }
+
+        .stats-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Floating Back Button -->
+    <button onclick="goBack()"
+        class="floating-back-btn bg-white/90 backdrop-blur-md text-gray-800 p-4 rounded-full shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+        <i class="fas fa-arrow-left text-lg group-hover:text-zanma-blue"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-zanma-blue via-blue-600 to-blue-800 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-32 h-32 bg-white rounded-full"></div>
+            <div class="absolute top-40 right-32 w-20 h-20 bg-white rounded-full"></div>
+            <div class="absolute bottom-32 left-32 w-28 h-28 bg-white rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-24 h-24 bg-white rounded-full"></div>
+        </div>
+
+        <div class="relative container mx-auto px-6 py-20 flex items-center min-h-screen">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                <!-- Content -->
+                <div class="text-white space-y-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <i class="fas fa-taxi text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-semibold opacity-90">Service Transport</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                            Taxi <span class="text-zanma-yellow">24h/24</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl opacity-90 leading-relaxed">
+                            Votre solution de transport fiable et rapide, disponible à tout moment dans toute la ville
+                        </p>
+                    </div>
+
+                    <!-- Features Highlights -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-clock text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Disponible 24h/24</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-map-marker-alt text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Toute la ville</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-shield-alt text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Sécurisé</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+                            <i class="fas fa-dollar-sign text-2xl mb-2 text-zanma-yellow"></i>
+                            <p class="font-semibold">Prix transparents</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="bg-zanma-yellow text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
+                            <i class="fas fa-mobile-alt mr-3"></i>Réserver maintenant
+                        </button>
+                        <button
+                            class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
+                            <i class="fas fa-info-circle mr-3"></i>En savoir plus
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Illustration -->
+                <div class="relative">
+                    <div class="floating-element">
+                        <div class="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-2xl">
+                            <div class="text-center">
+                                <div
+                                    class="w-32 h-32 bg-zanma-yellow rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                                    <i class="fas fa-taxi text-6xl text-gray-800"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-4">Votre taxi arrive</h3>
+                                <div class="bg-white/20 rounded-xl p-4">
+                                    <div class="flex items-center justify-between text-white mb-2">
+                                        <span>Temps d'attente:</span>
+                                        <span class="font-bold text-zanma-yellow">3 min</span>
+                                    </div>
+                                    <div class="w-full bg-white/20 rounded-full h-2">
+                                        <div class="bg-zanma-yellow h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Pourquoi choisir notre service taxi ?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Une expérience de transport exceptionnelle avec des chauffeurs professionnels et des véhicules
+                    confortables
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-clock text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Service 24h/24</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nos taxis sont disponibles jour et nuit, 7 jours sur 7, pour tous vos déplacements urgents ou
+                        planifiés.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-user-tie text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Chauffeurs professionnels</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nos chauffeurs sont expérimentés, courtois et connaissent parfaitement la ville pour vous
+                        garantir un trajet optimal.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-car text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Véhicules confortables</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Notre flotte de véhicules récents et bien entretenus vous assure un confort optimal pendant
+                        votre voyage.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-dollar-sign text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Prix transparents</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tarifs clairs et compétitifs sans frais cachés. Vous connaissez le prix avant de monter à bord.
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-red-50 to-red-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-route text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Trajets optimisés</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Grâce à notre système de navigation avancé, nous trouvons toujours le chemin le plus rapide et
+                        économique.
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="service-feature bg-gradient-to-br from-teal-50 to-teal-100 rounded-3xl p-8 text-center shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Sécurité garantie</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tous nos véhicules sont assurés et nos chauffeurs sont vérifiés pour votre sécurité et votre
+                        tranquillité d'esprit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">
+                    Nos chiffres parlent d'eux-mêmes
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">500+</div>
+                    <p class="text-gray-600 font-medium">Courses par jour</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">98%</div>
+                    <p class="text-gray-600 font-medium">Clients satisfaits</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">50+</div>
+                    <p class="text-gray-600 font-medium">Chauffeurs actifs</p>
+                </div>
+                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">3min</div>
+                    <p class="text-gray-600 font-medium">Temps d'attente moyen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="booking-card rounded-3xl p-12 text-white text-center shadow-2xl">
+                    <div
+                        class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8">
+                        <i class="fas fa-mobile-alt text-4xl"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Réservez votre taxi en quelques clics
+                    </h2>
+                    <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+                        Téléchargez notre application mobile ou appelez-nous directement pour réserver votre taxi en
+                        toute simplicité
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-lg mx-auto mb-8">
+                        <button
+                            class="bg-white/90 backdrop-blur-sm text-gray-800 py-4 px-6 rounded-2xl font-bold hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-google-play mr-3 text-xl"></i>Google Play
+                        </button>
+                        <button
+                            class="bg-white/90 backdrop-blur-sm text-gray-800 py-4 px-6 rounded-2xl font-bold hover:bg-white hover:shadow-lg transition-all duration-300 flex items-center justify-center">
+                            <i class="fab fa-apple mr-3 text-xl"></i>App Store
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-center space-x-4 text-lg">
+                        <span>Ou appelez-nous au</span>
+                        <a href="tel:+22612345678"
+                            class="bg-zanma-yellow text-gray-800 px-6 py-3 rounded-xl font-bold hover:bg-yellow-300 transition-all duration-300">
+                            <i class="fas fa-phone mr-2"></i>+226 12 34 56 78
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add some interactive animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate stats numbers
+            const statsElements = document.querySelectorAll('.stats-card .text-4xl');
+            statsElements.forEach(el => {
+                const finalValue = el.textContent;
+                let current = 0;
+                const increment = () => {
+                    if (current < parseInt(finalValue)) {
+                        current += Math.ceil(parseInt(finalValue) / 50);
+                        if (current > parseInt(finalValue)) current = parseInt(finalValue);
+                        el.textContent = current + (finalValue.includes('%') ? '%' : finalValue.includes('min') ? 'min' : '+');
+                        setTimeout(increment, 20);
+                    }
+                };
+
+                // Start animation when element is visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            increment();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                observer.observe(el.parentElement);
+            });
+        });
+    </script>
+    <script src="../assets/js/nos_service_composant_partage.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,18 @@
 let lastScrollTop = 0;
 let ticking = false;
 let isNavbarHidden = false;
-const scrollDelta = 10; // seuil de tolérance
-const hideThreshold = 131; // ne pas cacher la navbar avant ce scroll
+const scrollDelta = 10;
+let hideThreshold = 131;
 const navbar = document.getElementById('navbar');
 const firstSection = document.querySelector('.premier_section_after_navbar');
+
+function updateHideThreshold() {
+  if (window.innerWidth < 768) {
+    hideThreshold = 80;
+  } else {
+    hideThreshold = 150; // valeur desktop
+  }
+}
 
 const updateSectionMargin = () => {
     if (!navbar || !firstSection) return;
@@ -49,5 +57,36 @@ window.addEventListener("scroll", () => {
     }
 });
 
+updateHideThreshold();
+window.addEventListener('resize', updateHideThreshold);
 window.addEventListener('load', updateSectionMargin);
 window.addEventListener('resize', updateSectionMargin);
+
+
+
+// // Add scroll effect to navbar
+// let lastScrollTop = 0;
+// const navbar = document.getElementById('navbar');
+
+// window.addEventListener('scroll', () => {
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+//     if (scrollTop > lastScrollTop && scrollTop > 100) {
+//         // Scrolling down
+//         navbar.style.transform = 'translateY(-100%)';
+//     } else {
+//         // Scrolling up
+//         navbar.style.transform = 'translateY(0)';
+//     }
+
+//     // Add backdrop blur effect when scrolling
+//     if (scrollTop > 50) {
+//         navbar.classList.add('bg-white/95', 'dark:bg-gray-900/95');
+//         navbar.classList.remove('bg-white', 'dark:bg-gray-900');
+//     } else {
+//         navbar.classList.remove('bg-white/95', 'dark:bg-gray-900/95');
+//         navbar.classList.add('bg-white', 'dark:bg-gray-900');
+//     }
+
+//     lastScrollTop = scrollTop;
+// });
