@@ -8,6 +8,7 @@
     <script src="../assets/js/tailwindcss.3.4.16.js"></script>
     <script src="../assets/js/tailwind.config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style_site_web.css">
     <style>
         .floating-back-btn {
             position: fixed;
@@ -58,11 +59,13 @@
     </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="min-h-screen bg-gray-50 text-gray-800 custom-scrollbar-zanma-drive">
     <!-- Floating Back Button -->
     <button onclick="goBack()"
-        class="floating-back-btn bg-white/90 backdrop-blur-md text-gray-800 p-4 rounded-full shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-        <i class="fas fa-arrow-left text-lg group-hover:text-zanma-blue"></i>
+        class="floating-back-btn bg-zinc-200/90 backdrop-blur-md text-gray-800 py-2 px-4 rounded-3xl shadow-xl hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+        <span class="group-hover:text-zanma-blue">
+            <i class="fas fa-arrow-left text-lg"></i> Retour
+        </span>
     </button>
 
     <!-- Hero Section -->
@@ -265,20 +268,20 @@
             </div>
 
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
-                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">500+</div>
+                <div class="stats-card-increment stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="stats-item-increment text-4xl md:text-5xl font-bold text-zanma-blue mb-2">500+</div>
                     <p class="text-gray-600 font-medium">Courses par jour</p>
                 </div>
-                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
-                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">98%</div>
+                <div class="stats-card-increment stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="stats-item-increment text-4xl md:text-5xl font-bold text-zanma-blue mb-2">98%</div>
                     <p class="text-gray-600 font-medium">Clients satisfaits</p>
                 </div>
-                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
-                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">50+</div>
+                <div class="stats-card-increment stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="stats-item-increment text-4xl md:text-5xl font-bold text-zanma-blue mb-2">50+</div>
                     <p class="text-gray-600 font-medium">Chauffeurs actifs</p>
                 </div>
-                <div class="stats-card rounded-3xl p-8 text-center shadow-lg">
-                    <div class="text-4xl md:text-5xl font-bold text-zanma-blue mb-2">3min</div>
+                <div class="stats-card-increment stats-card rounded-3xl p-8 text-center shadow-lg">
+                    <div class="stats-item-increment text-4xl md:text-5xl font-bold text-zanma-blue mb-2">3min</div>
                     <p class="text-gray-600 font-medium">Temps d'attente moyen</p>
                 </div>
             </div>
@@ -288,7 +291,7 @@
     <!-- Booking Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in mx-auto">
                 <div class="booking-card rounded-3xl p-12 text-white text-center shadow-2xl">
                     <div
                         class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-8">
@@ -324,37 +327,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        // Add some interactive animations
-        document.addEventListener('DOMContentLoaded', function () {
-            // Animate stats numbers
-            const statsElements = document.querySelectorAll('.stats-card .text-4xl');
-            statsElements.forEach(el => {
-                const finalValue = el.textContent;
-                let current = 0;
-                const increment = () => {
-                    if (current < parseInt(finalValue)) {
-                        current += Math.ceil(parseInt(finalValue) / 50);
-                        if (current > parseInt(finalValue)) current = parseInt(finalValue);
-                        el.textContent = current + (finalValue.includes('%') ? '%' : finalValue.includes('min') ? 'min' : '+');
-                        setTimeout(increment, 20);
-                    }
-                };
-
-                // Start animation when element is visible
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            increment();
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                });
-                observer.observe(el.parentElement);
-            });
-        });
-    </script>
     <script src="../assets/js/nos_service_composant_partage.js"></script>
 </body>
 

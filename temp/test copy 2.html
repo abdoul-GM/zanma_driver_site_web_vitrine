@@ -5,24 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Client - ZANMA DRIVE</title>
-    <script src="assets/js/tailwindcss.3.4.16.js"></script>
-    <script src="assets/js/tailwind.config.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <script src="../assets/js/tailwindcss.3.4.16.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/style_site_web.css"> -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Graphik', 'sans-serif'],
+                    serif: ['Merriweather', 'serif'],
+                },
+                extend: {
+                    colors: {
+                        'zanma-blue': '#11286b',
+                        'zanma-yellow': '#ffe435',
+                        'zanma-nav-yellow': '#8d7d10',
+                        'zanma-nav-blue-dark': '#698cf3',
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                        'slide-down': 'slideDown 0.3s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-custom': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        slideDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(255, 228, 53, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(255, 228, 53, 0.6)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
     <header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
-        <div class="px-1 py-1 w-full">
-            <div class="flex items-center justify-between ">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                     <button onclick="goBack()"
-                        class="flex items-center space-x-2 bg-zinc-100/90 backdrop-blur-md text-gray-800 py-2 px-4 rounded-3xl shadow-sm hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-                        <span class="group-hover:text-zanma-blue">
-                            <i class="fas fa-arrow-left text-lg"></i> Retour
-                        </span>
+                        class="flex items-center space-x-2 px-4 py-2 text-zanma-blue hover:bg-zanma-blue/10 rounded-lg transition-colors duration-300 group">
+                        <i class="fas fa-arrow-left group-hover:-translate-x-1 transition-transform duration-300"></i>
+                        <span class="hidden sm:inline font-medium">Retour</span>
                     </button>
                     <div class="hidden md:flex items-center space-x-2 text-sm">
                         <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -95,11 +151,11 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="openPhoneModal()"
+                        <button
                             class="bg-zanma-yellow text-gray-800 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-yellow-300 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105">
                             <i class="fas fa-phone mr-3"></i>Appeler maintenant
                         </button>
-                        <button onclick="openChatModal()"
+                        <button
                             class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/30 transition-all duration-300 border border-white/30">
                             <i class="fas fa-comments mr-3"></i>Chat en ligne
                         </button>
@@ -634,7 +690,6 @@
             closeEmailModal();
         });
     </script>
-    <script src="assets/js/nos_service_composant_partage.js"></script>
 </body>
 
 </html>
